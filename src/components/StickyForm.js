@@ -2,7 +2,7 @@ import React from 'react';
 
 const StickyForm = (props) => {
 	//State for form data
-	const [formData, setFormData] = React.useState(props.task);
+	const [formData, setFormData] = React.useState(props.sticky);
 
 	//handleSubmit function to list data to App
 	const handleSubmit = (event) => {
