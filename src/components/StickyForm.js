@@ -2,45 +2,40 @@ import React from 'react';
 
 const StickyForm = (props) => {
 	//State for form data
-	const [formData, setFormData] = React.useState(props.task);
+	const [formData, setFormData] = React.useState(props.sticky);
 
 	//handleSubmit function to list data to App
 	const handleSubmit = (event) => {
-		console.log('this is formData: ', formData);
+        event.preventDefault()
+        console.log('this is formData: ', formData);
 		props.handleSubmit(formData);
 		props.history.push('/');
 	};
-
+	//handleChange for input of form data
 	const handleChange = (event) => {
-		setFormData({ ...formData, [event.target.name]: event.target.value });
+        setFormData({ ...formData, [event.target.name]: event.target.value });
 	};
 	return (
 		<form onSubmit={handleSubmit}>
-			<label id='task-name' for='name'>
-				Task Name
-			</label>
+			<label id='task-name'>Task Name</label>
 			<input
 				type='text'
-				id='form-task-name'
-				name='name'
+				id='form-task'
+				name='task'
 				value={formData.task}
 				onChange={handleChange}
 			/>
 			<br />
-			<label id='task-complete-by' for='complete-by'>
-				Complete By
-			</label>
+			<label id='task-completeBy'>Complete By</label>
 			<input
 				type='text'
-				id='form-complete-by'
-				name='complete-by'
+				id='form-completeBy'
+				name='completeBy'
 				value={formData.completeBy}
 				onChange={handleChange}
 			/>
 			<br />
-			<label id='task-workSpace' for='workSpace'>
-				Task Location
-			</label>
+			<label id='task-workSpace'>Task Location</label>
 			<input
 				type='text'
 				id='form-workspace'
@@ -49,9 +44,7 @@ const StickyForm = (props) => {
 				onChange={handleChange}
 			/>
 			<br />
-			<label id='task-description' for='description'>
-				Task Description
-			</label>
+			<label id='task-description'>Task Description</label>
 			<input
 				type='text'
 				id='form-description'
@@ -59,8 +52,10 @@ const StickyForm = (props) => {
 				value={formData.description}
 				onChange={handleChange}
 			/>
+			<br />
+			<input id='createButton' type='submit' />
 		</form>
 	);
 };
 
-export default StickyForm
+export default StickyForm;
