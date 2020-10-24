@@ -9,7 +9,7 @@ import StickyForm from './components/StickyForm';
 
 function App() {
 	// URL for backend data
-	const url = 'https://sticky-task.herokuapp.com/';
+	const url = 'https://sticky-task.herokuapp.com';
 	// State to hold Sticky List
 	const [stickies, setStickies] = useState([]);
 
