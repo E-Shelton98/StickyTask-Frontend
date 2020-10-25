@@ -1,0 +1,9 @@
+#sticky-display {
+    border: 1px solid gray;
+    display: flex;
+}
+
+.sticky {
+    text-align: left;
+    border: 1px solid gray;
+}
