@@ -1,4 +1,6 @@
 import React from 'react';
+//import Component CSS
+import './StickyForm.css'
 
 const StickyForm = (props) => {
 	//State for form data
