@@ -46,7 +46,6 @@ const DisplaySticky = (props) => {
 
               <button
                 className="editStickyButton"
-                // onSubmit={handleSubmit}
                 onClick={() => {
                   props.editSticky(sticky);
                   props.history.push("/");

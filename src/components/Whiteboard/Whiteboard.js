@@ -61,7 +61,7 @@ const Whiteboard = (props) => {
     });
   };
 
-  // editSticky to edit the contents of a sticky
+  // editSticky function to edit the contents of a sticky
   const editSticky = (sticky) => {
     fetch(url + "/sticky/" + sticky._id, {
       method: "put",
