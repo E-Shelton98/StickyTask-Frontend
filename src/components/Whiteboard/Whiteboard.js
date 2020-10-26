@@ -1,29 +1,35 @@
 //import React
-import React, { useState } from "react";
+import React, { useState } from 'react';
 //import Component CSS
-import "./Whiteboard.css";
+import './Whiteboard.css';
 //import Route
-import { Route } from "react-router-dom";
+import { Route } from 'react-router-dom';
 //Import Sticky Form
 import StickyForm from '../StickyForm/StickyForm';
 import DisplaySticky from '../DisplaySticky/DisplaySticky';
-import Done from '../Done/Done'
+import Done from '../Done/Done';
 
 const Whiteboard = (props) => {
 	// URL for backend data
-	const url = 'https://sticky-task.herokuapp.com/';    
-	
+	const url = 'https://sticky-task.herokuapp.com';
+
 	// State to hold Sticky List
 	const [stickies, setStickies] = useState([]);
-	console.log('stickies', stickies)
+	console.log('stickies', stickies);
 
-	const stickiesToFilter = stickies.data
-	let stickiesToDo = []
-	let stickiesDone = []
-	stickiesToFilter ? stickiesToDo = stickiesToFilter.filter(sticky => sticky.done === false) : console.log('something went wrong with the to-do filter')
-	stickiesToFilter ? stickiesDone = stickiesToFilter.filter(sticky => sticky.done === true) : console.log('something went wrong with the done filter')
-	
-	console.log('false', stickiesToDo)
+	const stickiesToFilter = stickies.data;
+	let stickiesToDo = [];
+	let stickiesDone = [];
+	stickiesToFilter
+		? (stickiesToDo = stickiesToFilter.filter(
+				(sticky) => sticky.done === false
+		  ))
+		: console.log('something went wrong with the to-do filter');
+	stickiesToFilter
+		? (stickiesDone = stickiesToFilter.filter((sticky) => sticky.done === true))
+		: console.log('something went wrong with the done filter');
+
+	console.log('false', stickiesToDo);
 	//empty sticky for Sticky Form
 	const emptySticky = {
 		task: '',
@@ -32,32 +38,43 @@ const Whiteboard = (props) => {
 		description: '',
 	};
 
-  //  Select Sticky for a user to select a sticky to update/edit
-  const [selectedSticky, setSelectedSticky] = React.useState(emptySticky);
+	//  Select Sticky for a user to select a sticky to update/edit
+	const [selectedSticky, setSelectedSticky] = React.useState(emptySticky);
 
-  //Fetch to get stickies from backend
-  const getStickies = () => {
-    fetch(url + "/sticky/")
-      .then((res) => res.json())
-      .then((data) => setStickies(data));
-  };
+	//Fetch to get stickies from backend
+	const getStickies = () => {
+		fetch(url + '/sticky/')
+			.then((res) => res.json())
+			.then((data) => setStickies(data));
+	};
 
-  //handleCreate Function for creating stickies in DisplayStickies
-  const handleCreate = (newSticky) => {
-    console.log(newSticky);
-    fetch(url + "/sticky/", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newSticky),
-    });
-  };
+	//handleCreate Function for creating stickies in DisplayStickies
+	const handleCreate = (newSticky) => {
+		console.log(newSticky);
+		fetch(url + '/sticky/', {
+			method: 'post',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(newSticky),
+		});
+	};
 
-  //Get stickies on page load
-  React.useEffect(() => {
-    getStickies();
-  }, []);
+	const handleUpdate = (sticky) => {
+		fetch(url + '/sticky/' + sticky._id, {
+			method: 'put',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(sticky),
+		}).then((response) => {
+			getStickies();
+			console.log(`sticky`, sticky);
+		});
+	};
+
+	//Get stickies on page load
+	React.useEffect(() => {
+		getStickies();
+	}, []);
 
 	//setUnDone function for setting a sticky back to to-do status
 	const setUnDone = (sticky) => {
@@ -67,11 +84,31 @@ const Whiteboard = (props) => {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				done: false
+				done: false,
 			}),
 		}).then(() => {
-      getStickies();
+			getStickies();
 		});
+	};
+
+	//setDone function for setting a sticky to done status
+	const setDone = (sticky) => {
+		fetch(url + '/sticky/' + sticky._id, {
+			method: 'put',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				done: true,
+			}),
+		}).then(() => {
+			getStickies();
+		});
+	};
+
+	// selectSticky which selects a sticky
+	const selectSticky = (sticky) => {
+		setSelectedSticky(sticky);
 	};
 
 	const deleteSticky = (sticky) => {
@@ -112,16 +149,40 @@ const Whiteboard = (props) => {
 			/>
 			<Route
 				exact
-				path='/'
+				path='/edit'
 				render={(rp) => (
-					<DisplaySticky {...rp} stickies={stickiesToDo} setDone={setDone} deleteSticky={deleteSticky}/>
+					<StickyForm
+						{...rp}
+						label='Update'
+						sticky={selectedSticky}
+						handleSubmit={handleUpdate}
+					/>
 				)}
 			/>
 			<Route
 				exact
 				path='/'
 				render={(rp) => (
-					<Done {...rp} stickies={stickiesDone} setUnDone={setUnDone} deleteSticky={deleteSticky} deleteAllStickies={deleteAllStickies}/>
+					<DisplaySticky
+						{...rp}
+						stickies={stickiesToDo}
+						setDone={setDone}
+						deleteSticky={deleteSticky}
+						selectSticky={selectSticky}
+					/>
+				)}
+			/>
+			<Route
+				exact
+				path='/'
+				render={(rp) => (
+					<Done
+						{...rp}
+						stickies={stickiesDone}
+						setUnDone={setUnDone}
+						deleteSticky={deleteSticky}
+						deleteAllStickies={deleteAllStickies}
+					/>
 				)}
 			/>
 		</div>
