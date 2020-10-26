@@ -38,9 +38,9 @@ const DisplaySticky = (props) => {
               <button
                 className="editStickyButton"
                 onClick={() => {
-                  props.editSticky(sticky);
+                  props.handleUpdate(sticky);
                   props.history.push("/");
-                  console.log(`edit button`, props.editSticky);
+                  console.log(`edit button`, props.handleUpdate);
                 }}
               >
                 Edit

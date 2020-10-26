@@ -61,8 +61,8 @@ const Whiteboard = (props) => {
     });
   };
 
-  // editSticky function to edit the contents of a sticky
-  const editSticky = (sticky) => {
+  // handleUpdate function to update the contents of a sticky
+  const handleUpdate = (sticky) => {
     fetch(url + "/sticky/" + sticky._id, {
       method: "put",
       headers: { "Content-Type": "application/json" },
@@ -95,6 +95,7 @@ const Whiteboard = (props) => {
             label="create"
             sticky={emptySticky}
             handleSubmit={handleCreate}
+            handleUpdate={handleUpdate}
           />
         )}
       />
@@ -107,7 +108,7 @@ const Whiteboard = (props) => {
             stickies={stickies}
             setDone={setDone}
             deleteSticky={deleteSticky}
-            editSticky={editSticky}
+            handleUpdate={handleUpdate}
           />
         )}
       />
