@@ -66,7 +66,8 @@ const Whiteboard = (props) => {
     fetch(url + "/sticky/" + sticky._id, {
       method: "put",
       headers: { "Content-Type": "application/json" },
-    }).then(() => {
+      body: JSON.stringify(sticky),
+    }).then((response) => {
       getStickies();
       console.log(`sticky`, sticky);
     });
