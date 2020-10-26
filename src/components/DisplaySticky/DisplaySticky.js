@@ -34,6 +34,10 @@ const DisplaySticky = (props) => {
 								Done
 							</button>
 							<section>For Testing Only! {JSON.stringify(sticky.done)}</section>
+							<section onClick={() => {
+								props.deleteSticky(sticky);
+								props.history.push('/')
+							}}>DELETE STICKY!</section>
 						</div>
 					))}
 				</div>
