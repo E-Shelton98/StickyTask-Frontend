@@ -68,6 +68,7 @@ const Whiteboard = (props) => {
       headers: { "Content-Type": "application/json" },
     }).then(() => {
       getStickies();
+      console.log(`sticky`, sticky);
     });
   };
 
