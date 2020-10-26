@@ -1,18 +1,18 @@
 //import React
 import React from 'react';
 //Import Component CSS
-import './DisplaySticky.css';
+import './Done.css';
 
 //Create DisplaySticky Component
-const DisplaySticky = (props) => {
+const Done = (props) => {
+	console.log('Display done stickies props', props);
 	let stickies = props.stickies;
-	console.log(stickies);
 
 	return (
 		<>
 			{stickies && stickies.length > 0 ? (
 				<div id='sticky-display'>
-					<h2>To-Do</h2>
+					<h2>Done</h2>
 					{stickies.map((sticky) => (
 						<div className='sticky'>
 							<section className='sticky-name'>Name: {sticky.task}</section>
@@ -29,22 +29,11 @@ const DisplaySticky = (props) => {
 							<button
 								className='sticky-set-done'
 								onClick={() => {
-									props.setDone(sticky);
+									props.setUnDone(sticky);
 									props.history.push('/');
 								}}>
-								Done
+								Not Done
 							</button>
-
-							<button
-								className='editStickyButton'
-								onClick={() => {
-									props.selectSticky(sticky);
-									props.history.push('/edit');
-									console.log(`edit button`, props.handleUpdate);
-								}}>
-								Edit
-							</button>
-
 							<section>For Testing Only! {JSON.stringify(sticky.done)}</section>
 							<section
 								onClick={() => {
@@ -55,12 +44,13 @@ const DisplaySticky = (props) => {
 							</section>
 						</div>
 					))}
+					<i class='far fa-trash-alt' onClick={props.deleteAllStickies}></i>
 				</div>
 			) : (
-				<h3>Add Some Stickies!</h3>
+				<h3>No Completed Tasks Yet!</h3>
 			)}
 		</>
 	);
 };
 
-export default DisplaySticky;
+export default Done;
