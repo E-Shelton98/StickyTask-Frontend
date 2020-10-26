@@ -22,6 +22,9 @@ const Whiteboard = (props) => {
     description: "",
   };
 
+  //  Select Sticky for a user to select a sticky to update/edit
+  const [selectedSticky, setSelectedSticky] = React.useState(emptySticky);
+
   //Fetch to get stickies from backend
   const getStickies = () => {
     fetch(url + "/sticky/")
@@ -72,6 +75,10 @@ const Whiteboard = (props) => {
       console.log(`sticky`, sticky);
     });
   };
+  // select sticky which selects a sticky
+  const selectSticky = (sticky) => {
+    setSelectedSticky(sticky);
+  };
 
   const deleteSticky = (sticky) => {
     fetch(url + "/sticky/" + sticky._id, {
@@ -95,6 +102,17 @@ const Whiteboard = (props) => {
             label="create"
             sticky={emptySticky}
             handleSubmit={handleCreate}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/edit"
+        render={(rp) => (
+          <StickyForm
+            {...rp}
+            lbael="update"
+            sticky={selectedSticky}
             handleUpdate={handleUpdate}
           />
         )}
@@ -109,6 +127,7 @@ const Whiteboard = (props) => {
             setDone={setDone}
             deleteSticky={deleteSticky}
             handleUpdate={handleUpdate}
+            selectSticky={selectSticky}
           />
         )}
       />

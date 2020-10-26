@@ -38,8 +38,8 @@ const DisplaySticky = (props) => {
               <button
                 className="editStickyButton"
                 onClick={() => {
-                  props.handleUpdate(sticky);
-                  props.history.push("/");
+                  props.selectSticky(sticky);
+                  props.history.push("/edit");
                   console.log(`edit button`, props.handleUpdate);
                 }}
               >
