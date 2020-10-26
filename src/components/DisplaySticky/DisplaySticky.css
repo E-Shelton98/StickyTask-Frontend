@@ -1,9 +1,24 @@
 #sticky-display {
     border: 1px solid gray;
     display: flex;
+    flex-direction: column;
 }
 
 .sticky {
     text-align: left;
     border: 1px solid gray;
+    background-color: #f2de78;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr)
+}
+
+.sticky-set-done {
+    border-radius: 30px !important;
+    width: 100px;
+    height:40px;
+    background-color: #f2de78;
+    grid-column: 2;
+    grid-row: 1;
 }

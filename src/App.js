@@ -11,7 +11,7 @@ function App() {
 	
 	return (
 		<div className='App'>
-			<h1>Hello World, how you been.....good to see you my old friend.</h1>
+			<h1>Sticky Task</h1>
 			<Whiteboard/>
 		</div>
 	);
