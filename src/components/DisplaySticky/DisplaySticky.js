@@ -34,6 +34,15 @@ const DisplaySticky = (props) => {
               >
                 Done
               </button>
+              <button
+                className="editStickyButton"
+                onClick={() => {
+                  props.editSticky(sticky);
+                  props.history.push("/");
+                }}
+              >
+                Edit
+              </button>
               <section>For Testing Only! {JSON.stringify(sticky.done)}</section>
               <section
                 onClick={() => {

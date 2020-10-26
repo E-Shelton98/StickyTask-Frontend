@@ -61,6 +61,16 @@ const Whiteboard = (props) => {
     });
   };
 
+  // editSticky to edit the contents of a sticky
+  const editSticky = (sticky) => {
+    fetch(url + "/sticky/" + sticky._id, {
+      method: "put",
+      headers: { "Content-Type": "application/json" },
+    }).then(() => {
+      getStickies();
+    });
+  };
+
   const deleteSticky = (sticky) => {
     fetch(url + "/sticky/" + sticky._id, {
       method: "delete",
@@ -95,6 +105,7 @@ const Whiteboard = (props) => {
             stickies={stickies}
             setDone={setDone}
             deleteSticky={deleteSticky}
+            editSticky={editSticky}
           />
         )}
       />
