@@ -75,7 +75,7 @@ const Whiteboard = (props) => {
       console.log(`sticky`, sticky);
     });
   };
-  // select sticky which selects a sticky
+  // selectSticky which selects a sticky
   const selectSticky = (sticky) => {
     setSelectedSticky(sticky);
   };
@@ -113,7 +113,7 @@ const Whiteboard = (props) => {
             {...rp}
             label="Update"
             sticky={selectedSticky}
-            handleUpdate={handleUpdate}
+            handleSubmit={handleUpdate}
           />
         )}
       />
