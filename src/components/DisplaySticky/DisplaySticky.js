@@ -8,15 +8,6 @@ const DisplaySticky = (props) => {
   let stickies = props.stickies.data;
   console.log(stickies);
 
-  //   // setting state to edit sticky
-  //   const [stickyData, setStickyData] = React.useState(props.stickies);
-  //   // edit sticky function
-  //   const handleSubmit = (event) => {
-  //     event.preventDefault();
-  //     props.handleSubmit(stickyData);
-  //     props.history.push("/");
-  //   };
-
   return (
     <>
       {stickies ? (
