@@ -9,12 +9,12 @@ import Whiteboard from "./components/Whiteboard/Whiteboard";
 
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Hello World, how you been.....good to see you my old friend.</h1>
-      <Whiteboard />
-    </div>
-  );
+	return (
+		<div className='App'>
+			<h1>Sticky Task</h1>
+			<Whiteboard/>
+		</div>
+	);
 }
 
 export default App;
