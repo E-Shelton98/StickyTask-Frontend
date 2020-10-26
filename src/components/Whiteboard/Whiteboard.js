@@ -11,7 +11,8 @@ import Done from '../Done/Done'
 
 const Whiteboard = (props) => {
 	// URL for backend data
-	const url = 'http://localhost:3500';    //DONT FORGET TO CHANGE BACK TO HEROKU
+	const url = 'https://sticky-task.herokuapp.com/';    
+	
 	// State to hold Sticky List
 	const [stickies, setStickies] = useState([]);
 	console.log('stickies', stickies)
