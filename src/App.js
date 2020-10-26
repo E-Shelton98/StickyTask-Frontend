@@ -1,21 +1,20 @@
 // Import React
-import React, { useState } from 'react';
+import React, { useState } from "react";
 //Import App CSS
-import './App.css';
+import "./App.css";
 //import Route
-import { Route } from 'react-router-dom';
+import { Route } from "react-router-dom";
 //Import Sticky Form
-import Whiteboard from './components/Whiteboard/Whiteboard';
+import Whiteboard from "./components/Whiteboard/Whiteboard";
 
 
 function App() {
-	
-	return (
-		<div className='App'>
-			<h1>Hello World, how you been.....good to see you my old friend.</h1>
-			<Whiteboard/>
-		</div>
-	);
+  return (
+    <div className="App">
+      <h1>Hello World, how you been.....good to see you my old friend.</h1>
+      <Whiteboard />
+    </div>
+  );
 }
 
 export default App;

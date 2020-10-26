@@ -1,9 +1,9 @@
 //import React
-import React, { useState } from 'react';
+import React, { useState } from "react";
 //import Component CSS
-import './Whiteboard.css';
+import "./Whiteboard.css";
 //import Route
-import { Route } from 'react-router-dom';
+import { Route } from "react-router-dom";
 //Import Sticky Form
 import StickyForm from '../StickyForm/StickyForm';
 import DisplaySticky from '../DisplaySticky/DisplaySticky';
@@ -32,59 +32,47 @@ const Whiteboard = (props) => {
 		description: '',
 	};
 
-	//Fetch to get stickies from backend
-	const getStickies = () => {
-		fetch(url + '/sticky/')
-			.then((res) => res.json())
-			.then((data) => setStickies(data));
-	};
+  //  Select Sticky for a user to select a sticky to update/edit
+  const [selectedSticky, setSelectedSticky] = React.useState(emptySticky);
 
-	//handleCreate Function for creating stickies in DisplayStickies
-	const handleCreate = (newSticky) => {
-		console.log(newSticky);
-		fetch(url + '/sticky/', {
-			method: 'post',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(newSticky),
-		});
-	};
+  //Fetch to get stickies from backend
+  const getStickies = () => {
+    fetch(url + "/sticky/")
+      .then((res) => res.json())
+      .then((data) => setStickies(data));
+  };
 
-	//Get stickies on page load
-	React.useEffect(() => {
-		getStickies();
-	}, []);
+  //handleCreate Function for creating stickies in DisplayStickies
+  const handleCreate = (newSticky) => {
+    console.log(newSticky);
+    fetch(url + "/sticky/", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newSticky),
+    });
+  };
 
-	//setDone function for setting a sticky to done status
-	const setDone = (sticky) => {
+  //Get stickies on page load
+  React.useEffect(() => {
+    getStickies();
+  }, []);
+
+	//setUnDone function for setting a sticky back to to-do status
+	const setUnDone = (sticky) => {
 		fetch(url + '/sticky/' + sticky._id, {
 			method: 'put',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				done: true,
+				done: false
 			}),
 		}).then(() => {
-			getStickies();
+      getStickies();
 		});
 	};
-
-		//setUnDone function for setting a sticky back to to-do status
-		const setUnDone = (sticky) => {
-			fetch(url + '/sticky/' + sticky._id, {
-				method: 'put',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					done: false
-				}),
-			}).then(() => {
-				getStickies();
-			});
-		};
 
 	const deleteSticky = (sticky) => {
 		fetch(url + '/sticky/' + sticky._id, {
