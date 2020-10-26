@@ -99,7 +99,7 @@ const Whiteboard = (props) => {
         render={(rp) => (
           <StickyForm
             {...rp}
-            label="create"
+            label="Create"
             sticky={emptySticky}
             handleSubmit={handleCreate}
           />
@@ -111,7 +111,7 @@ const Whiteboard = (props) => {
         render={(rp) => (
           <StickyForm
             {...rp}
-            lbael="update"
+            label="Update"
             sticky={selectedSticky}
             handleUpdate={handleUpdate}
           />

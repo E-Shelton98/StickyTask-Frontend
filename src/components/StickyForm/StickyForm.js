@@ -54,7 +54,8 @@ const StickyForm = (props) => {
         onChange={handleChange}
       />
       <br />
-      <input id="createButton" type="submit" />
+      <input id="createButton" type="submit" value={props.label} />
+      {/* <input type="submit" value={props.label} /> */}
     </form>
   );
 };
