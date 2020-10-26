@@ -8,8 +8,8 @@ const StickyForm = (props) => {
 
 	//handleSubmit function to list data to App
 	const handleSubmit = (event) => {
-        event.preventDefault()
-        console.log('this is formData: ', formData);
+		event.preventDefault()
+		console.log('this is formData: ', formData);
 		props.handleSubmit(formData);
 		props.history.push('/');
 	};

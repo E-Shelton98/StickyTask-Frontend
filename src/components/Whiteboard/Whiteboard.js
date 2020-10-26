@@ -1,7 +1,7 @@
 //import React
 import React, { useState } from 'react';
 //import Component CSS
-import './Whiteboard.css'
+import './Whiteboard.css';
 //import Route
 import { Route } from 'react-router-dom';
 //Import Sticky Form
@@ -51,15 +51,26 @@ const Whiteboard = (props) => {
 		fetch(url + '/sticky/' + sticky._id, {
 			method: 'put',
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				done: true
-			})	
+				done: true,
+			}),
 		}).then(() => {
-			getStickies()
-		})
-	}
+			getStickies();
+		});
+	};
+
+	const deleteSticky = (sticky) => {
+		fetch(url + '/sticky/' + sticky._id, {
+			method: 'delete',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		}).then(() => {
+			getStickies();
+		});
+	};
 
 	return (
 		<div className='Whiteboard-Div'>
@@ -78,7 +89,9 @@ const Whiteboard = (props) => {
 			<Route
 				exact
 				path='/'
-				render={(rp) => <DisplaySticky {...rp} stickies={stickies} setDone={setDone}/>}
+				render={(rp) => (
+					<DisplaySticky {...rp} stickies={stickies} setDone={setDone} deleteSticky={deleteSticky}/>
+				)}
 			/>
 		</div>
 	);
