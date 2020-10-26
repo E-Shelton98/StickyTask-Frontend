@@ -5,6 +5,7 @@ import "./App.css";
 //import Route
 import { Route } from "react-router-dom";
 //Import Sticky Form
+<<<<<<< HEAD
 import StickyForm from "./components/StickyForm";
 
 function App() {
@@ -62,6 +63,18 @@ function App() {
       />
     </div>
   );
+=======
+import Whiteboard from './components/Whiteboard/Whiteboard';
+
+function App() {
+	
+	return (
+		<div className='App'>
+			<h1>Hello World, how you been.....good to see you my old friend.</h1>
+			<Whiteboard/>
+		</div>
+	);
+>>>>>>> 0bd4b98839b32ce787e690542952b757fb9cc1b6
 }
 
 export default App;
