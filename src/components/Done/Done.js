@@ -5,16 +5,16 @@ import './Done.css';
 
 //Create DisplaySticky Component
 const Done = (props) => {
-	console.log('Display stickies props', props)
-    let stickies = props.stickies.data;
-    let stickiesFalse = stickies
+	console.log('Display done stickies props', props)
+    let stickies = props.stickies;
+
  
 	return (
 		<>
 			{stickies && stickies.length > 0 ? (
 				<div id='sticky-display'>
                     <h2>Done</h2>
-					{stickiesFalse.filter(sticky => sticky.done === true).map((sticky) => (
+					{stickies.filter(sticky => sticky.done === true).map((sticky) => (
 						<div className='sticky'>
 							<section className='sticky-name'>Name: {sticky.task}</section>
 							<section className='sticky-complete-by'>

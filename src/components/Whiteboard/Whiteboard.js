@@ -18,7 +18,9 @@ const Whiteboard = (props) => {
 
 	const stickiesToFilter = stickies.data
 	let stickiesToDo = []
-	stickiesToFilter ? stickiesToDo = stickiesToFilter.filter(sticky => sticky.done === false) : console.log('something went wrong with the filter')
+	let stickiesDone = []
+	stickiesToFilter ? stickiesToDo = stickiesToFilter.filter(sticky => sticky.done === false) : console.log('something went wrong with the to-do filter')
+	stickiesToFilter ? stickiesDone = stickiesToFilter.filter(sticky => sticky.done === true) : console.log('something went wrong with the done filter')
 	
 	console.log('false', stickiesToDo)
 	//empty sticky for Sticky Form
@@ -130,7 +132,7 @@ const Whiteboard = (props) => {
 				exact
 				path='/'
 				render={(rp) => (
-					<Done {...rp} stickies={stickies} setUnDone={setUnDone} deleteSticky={deleteSticky} deleteAllStickies={deleteAllStickies}/>
+					<Done {...rp} stickies={stickiesDone} setUnDone={setUnDone} deleteSticky={deleteSticky} deleteAllStickies={deleteAllStickies}/>
 				)}
 			/>
 		</div>
