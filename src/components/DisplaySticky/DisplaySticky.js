@@ -5,8 +5,7 @@ import "./DisplaySticky.css";
 
 //Create DisplaySticky Component
 const DisplaySticky = (props) => {
-  let stickies = props.stickies;
-  console.log(stickies);
+	let stickies = props.stickies;
 
   return (
     <>
