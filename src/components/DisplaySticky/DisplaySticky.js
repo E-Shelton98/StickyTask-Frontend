@@ -43,7 +43,12 @@ const DisplaySticky = (props) => {
         <div id="sticky-display">
           <h2>To-Do</h2>
           {stickies.map((sticky) => (
-            <div className="sticky">
+            <motion.div
+              className="sticky"
+              initial={{ opacity: 0.2 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+            >
               <section className="sticky-name">Name: {sticky.task}</section>
               <section className="sticky-complete-by">
                 Complete By: {sticky.completeBy}
@@ -93,7 +98,7 @@ const DisplaySticky = (props) => {
                 ></motion.section>
                 <section className="sticky-add-person">+</section>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       ) : (
