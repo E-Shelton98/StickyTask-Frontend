@@ -1,7 +1,7 @@
 //import React
 import React, { useState } from "react";
 // import Framer Motion
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 //import Component CSS
 import "./Whiteboard.css";
 //import Route

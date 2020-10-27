@@ -15,7 +15,7 @@ function App() {
       <motion.h1
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 1.5, type: `tween` }}
+        transition={{ duration: 1.5, type: `spring`, stiffness: 120 }}
       >
         Sticky Task
       </motion.h1>

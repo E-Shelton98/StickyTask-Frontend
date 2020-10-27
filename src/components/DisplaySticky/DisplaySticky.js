@@ -5,6 +5,22 @@ import { motion } from "framer-motion";
 //Import Component CSS
 import "./DisplaySticky.css";
 
+// create framer motion variable for animating the display sticky div
+const containerVariants = {};
+
+// create framer motion variable for animating the done button
+const doneButtonVariant = {
+  whileHover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {
+      yoyo: Infinity,
+      duration: 0.4,
+    },
+  },
+};
+
 //Create DisplaySticky Component
 const DisplaySticky = (props) => {
   let stickies = props.stickies;
@@ -20,6 +36,7 @@ const DisplaySticky = (props) => {
               className="sticky"
               initial={{ opacity: 0.2 }}
               animate={{ opacity: 1 }}
+              variants={containerVariants}
               transition={{ duration: 1.5 }}
             >
               <section className="sticky-name">Name: {sticky.task}</section>
@@ -35,13 +52,15 @@ const DisplaySticky = (props) => {
               <section className="sticky-add-person">+</section>
               <motion.button
                 className="sticky-set-done"
-                initial={{}}
+                variants={doneButtonVariant}
                 animate={{}}
-                whileHover={{
-                  scale: 1.1,
-                  textShadow: "0px 0px 8px rgb(255,255,255)",
-                  boxShadow: "0px 0px 8px rgb(255,255,255)",
-                }}
+                whileHover="whileHover"
+                initial={{}}
+                // whileHover={{
+                //     scale: 1.1,
+                //   textShadow: "0px 0px 8px rgb(255,255,255)",
+                //   boxShadow: "0px 0px 8px rgb(255,255,255)",
+                // }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   props.setDone(sticky);
@@ -64,7 +83,11 @@ const DisplaySticky = (props) => {
 
               <section>For Testing Only! {JSON.stringify(sticky.done)}</section>
               <motion.section
-                whileHover={{ scale: 1.1, originX: 0 }}
+                whileHover={{
+                  scale: 1.1,
+                  originX: 0,
+                  textShadow: "0px 0px 8px #ff0000",
+                }}
                 whileTap={{ scale: 0.9 }}
                 class="far fa-trash-alt"
                 onClick={() => {

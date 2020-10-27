@@ -5,6 +5,19 @@ import { motion } from "framer-motion";
 //Import Component CSS
 import "./Done.css";
 
+// create framer motion variable for animating the not done button
+const notDoneButtonVariant = {
+  whileHover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {
+      yoyo: Infinity,
+      duration: 0.4,
+    },
+  },
+};
+
 //Create DisplaySticky Component
 const Done = (props) => {
   console.log("Display done stickies props", props);
@@ -37,11 +50,13 @@ const Done = (props) => {
                 className="sticky-set-done"
                 initial={{}}
                 animate={{}}
-                whileHover={{
-                  scale: 1.1,
-                  textShadow: "0px 0px 8px rgb(255,255,255)",
-                  boxShadow: "0px 0px 8px rgb(255,255,255)",
-                }}
+                variants={notDoneButtonVariant}
+                whileHover="whileHover"
+                // whileHover={{
+                //   scale: 1.1,
+                //   textShadow: "0px 0px 8px rgb(255,255,255)",
+                //   boxShadow: "0px 0px 8px rgb(255,255,255)",
+                // }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   props.setUnDone(sticky);
