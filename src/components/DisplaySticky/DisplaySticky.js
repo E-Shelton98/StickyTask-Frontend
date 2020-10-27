@@ -33,15 +33,22 @@ const DisplaySticky = (props) => {
                 Description: {sticky.description}
               </section>
               <section className="sticky-add-person">+</section>
-              <button
+              <motion.button
                 className="sticky-set-done"
+                initial={{}}
+                animate={{}}
+                whileHover={{
+                  scale: 1.1,
+                  textShadow: "0px 0px 8px rgb(255,255,255)",
+                  boxShadow: "0px 0px 8px rgb(255,255,255)",
+                }}
                 onClick={() => {
                   props.setDone(sticky);
                   props.history.push("/");
                 }}
               >
                 Done
-              </button>
+              </motion.button>
 
               <button
                 className="editStickyButton"

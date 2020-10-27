@@ -33,15 +33,18 @@ const Done = (props) => {
                 Description: {sticky.description}
               </section>
               <section className="sticky-add-person">+</section>
-              <button
+              <motion.button
                 className="sticky-set-done"
+                initial={{}}
+                animate={{}}
+                whileHover={{ scale: 1.1 }}
                 onClick={() => {
                   props.setUnDone(sticky);
                   props.history.push("/");
                 }}
               >
                 Not Done
-              </button>
+              </motion.button>
               <section>For Testing Only! {JSON.stringify(sticky.done)}</section>
               <section
                 onClick={() => {
