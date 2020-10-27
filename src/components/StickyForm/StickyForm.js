@@ -1,4 +1,6 @@
 import React from "react";
+// import Framer Motion
+import { motion } from "framer-motion";
 //import Component CSS
 import "./StickyForm.css";
 
