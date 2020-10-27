@@ -1,5 +1,7 @@
 //import React
 import React from "react";
+// import Framer Motion
+import { motion } from "framer-motion";
 //Import Component CSS
 import "./DisplaySticky.css";
 
@@ -11,7 +13,12 @@ const DisplaySticky = (props) => {
   return (
     <>
       {stickies && stickies.length > 0 ? (
-        <div id="sticky-display">
+        <motion.div
+          initial={{ opacity: 0.2 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          id="sticky-display"
+        >
           <h2>To-Do</h2>
           {stickies.map((sticky) => (
             <div className="sticky">
@@ -57,7 +64,7 @@ const DisplaySticky = (props) => {
               ></section>
             </div>
           ))}
-        </div>
+        </motion.div>
       ) : (
         <h3>Add Some Stickies!</h3>
       )}

@@ -1,4 +1,6 @@
 import React from "react";
+// import Framer Motion
+import { motion } from "framer-motion";
 //import Component CSS
 import "./StickyForm.css";
 
@@ -17,7 +19,12 @@ const StickyForm = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <motion.form
+      initial={{ x: 1000 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 1.5, type: `tween` }}
+      onSubmit={handleSubmit}
+    >
       <label id="task-name">Task Name</label>
       <input
         type="text"
@@ -56,7 +63,7 @@ const StickyForm = (props) => {
       <br />
       <input id="createButton" type="submit" value={props.label} />
       {/* <input type="submit" value={props.label} /> */}
-    </form>
+    </motion.form>
   );
 };
 
