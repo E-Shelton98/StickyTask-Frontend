@@ -19,12 +19,7 @@ const StickyForm = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   return (
-    <motion.form
-      initial={{ x: 1000 }}
-      animate={{ x: 0 }}
-      transition={{ duration: 1.5, type: `tween` }}
-      onSubmit={handleSubmit}
-    >
+    <form onSubmit={handleSubmit}>
       <label id="task-name">Task Name</label>
       <input
         type="text"
@@ -63,7 +58,7 @@ const StickyForm = (props) => {
       <br />
       <input id="createButton" type="submit" value={props.label} />
       {/* <input type="submit" value={props.label} /> */}
-    </motion.form>
+    </form>
   );
 };
 

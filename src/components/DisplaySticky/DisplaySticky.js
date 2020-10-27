@@ -13,15 +13,15 @@ const DisplaySticky = (props) => {
   return (
     <>
       {stickies && stickies.length > 0 ? (
-        <motion.div
-          initial={{ opacity: 0.2 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          id="sticky-display"
-        >
+        <div id="sticky-display">
           <h2>To-Do</h2>
           {stickies.map((sticky) => (
-            <div className="sticky">
+            <motion.div
+              className="sticky"
+              initial={{ opacity: 0.2 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+            >
               <section className="sticky-name">Name: {sticky.task}</section>
               <section className="sticky-complete-by">
                 Complete By: {sticky.completeBy}
@@ -42,6 +42,7 @@ const DisplaySticky = (props) => {
                   textShadow: "0px 0px 8px rgb(255,255,255)",
                   boxShadow: "0px 0px 8px rgb(255,255,255)",
                 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   props.setDone(sticky);
                   props.history.push("/");
@@ -64,15 +65,16 @@ const DisplaySticky = (props) => {
               <section>For Testing Only! {JSON.stringify(sticky.done)}</section>
               <motion.section
                 whileHover={{ scale: 1.1, originX: 0 }}
+                whileTap={{ scale: 0.9 }}
                 class="far fa-trash-alt"
                 onClick={() => {
                   props.deleteSticky(sticky);
                   props.history.push("/");
                 }}
               ></motion.section>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       ) : (
         <h3>Add Some Stickies!</h3>
       )}
