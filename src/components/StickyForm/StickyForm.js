@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import "./StickyForm.css";
 
 const StickyForm = (props) => {
-  console.log('sticky form props', props)
+  console.log("sticky form props", props);
   //State for form data
   const [formData, setFormData] = React.useState(props.sticky);
 
@@ -20,7 +20,13 @@ const StickyForm = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   return (
-    <form onSubmit={() => {handleSubmit()}}>
+    <motion.form
+      onSubmit={() => {
+        handleSubmit();
+      }}
+      initial={{ y: -100 }}
+      animate={{ scale: 2.5, x: 750, y: 170 }}
+    >
       <label id="task-name">Task Name</label>
       <input
         type="text"
@@ -59,7 +65,7 @@ const StickyForm = (props) => {
       <br />
       <input id="createButton" type="submit" value={props.label} />
       {/* <input type="submit" value={props.label} /> */}
-    </form>
+    </motion.form>
   );
 };
 
