@@ -1,15 +1,16 @@
 //import React
-import React, { useState } from 'react';
+import React, { useState } from "react";
 //import Component CSS
-import './Whiteboard.css';
+import "./Whiteboard.css";
 //import Route
-import { Route } from 'react-router-dom';
+import { Route } from "react-router-dom";
 //Import Sticky Form
-import StickyForm from '../StickyForm/StickyForm';
-import DisplaySticky from '../DisplaySticky/DisplaySticky';
-import Done from '../Done/Done';
+import StickyForm from "../StickyForm/StickyForm";
+import DisplaySticky from "../DisplaySticky/DisplaySticky";
+import Done from "../Done/Done";
 
 const Whiteboard = (props) => {
+
 	// URL for backend data
 	const url = 'https://sticky-task.herokuapp.com';
 
@@ -203,6 +204,7 @@ const Whiteboard = (props) => {
 			/>
 		</div>
 	);
+
 };
 
 export default Whiteboard;
