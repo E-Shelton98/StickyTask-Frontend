@@ -30,6 +30,7 @@ const createButtonVariant = {
       duration: 0.4,
     },
   },
+  whileTap: { scale: 0.9 },
 };
 
 const StickyForm = (props) => {
@@ -98,6 +99,7 @@ const StickyForm = (props) => {
         value={props.label}
         variants={createButtonVariant}
         whileHover="whileHover"
+        whileTap="whileTap"
       />
       {/* <input type="submit" value={props.label} /> */}
     </motion.form>
