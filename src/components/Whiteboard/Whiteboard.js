@@ -133,9 +133,12 @@ const Whiteboard = (props) => {
 		});
 	};
 
+	const [dropDown, setDropDown] = useState(false)
+	
+
 	return (
 		<div className='Whiteboard-Div'>
-			<Route
+			{dropDown ? (<button className='add-sticky' onClick={setDropDown(!dropDown)}>Sticky Task +</button>) : 	(	<Route
 				exact
 				path='/'
 				render={(rp) => (
@@ -146,7 +149,9 @@ const Whiteboard = (props) => {
 						handleSubmit={handleCreate}
 					/>
 				)}
-			/>
+			/>)}
+			
+	
 			<Route
 				exact
 				path='/edit'
