@@ -37,7 +37,11 @@ const Done = (props) => {
                 className="sticky-set-done"
                 initial={{}}
                 animate={{}}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{
+                  scale: 1.1,
+                  textShadow: "0px 0px 8px rgb(255,255,255)",
+                  boxShadow: "0px 0px 8px rgb(255,255,255)",
+                }}
                 onClick={() => {
                   props.setUnDone(sticky);
                   props.history.push("/");

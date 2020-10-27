@@ -62,13 +62,14 @@ const DisplaySticky = (props) => {
               </button>
 
               <section>For Testing Only! {JSON.stringify(sticky.done)}</section>
-              <section
+              <motion.section
+                whileHover={{ scale: 1.1, originX: 0 }}
                 class="far fa-trash-alt"
                 onClick={() => {
                   props.deleteSticky(sticky);
                   props.history.push("/");
                 }}
-              ></section>
+              ></motion.section>
             </div>
           ))}
         </motion.div>
