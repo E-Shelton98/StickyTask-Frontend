@@ -4,6 +4,17 @@ import { motion } from "framer-motion";
 //import Component CSS
 import "./StickyForm.css";
 
+const stickyFormVariant = {
+  initial: {
+    y: -100,
+  },
+  animate: {
+    scale: 2.5,
+    x: "60vw",
+    y: "10vw",
+  },
+};
+
 const StickyForm = (props) => {
   console.log("sticky form props", props);
   //State for form data
@@ -24,8 +35,9 @@ const StickyForm = (props) => {
       onSubmit={() => {
         handleSubmit();
       }}
-      initial={{ y: -100 }}
-      animate={{ scale: 2.5, x: 750, y: 170 }}
+      variants={stickyFormVariant}
+      initial="inital"
+      animate="animate"
     >
       <label id="task-name">Task Name</label>
       <input
