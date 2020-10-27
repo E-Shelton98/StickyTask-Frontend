@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 //import Component CSS
 import "./StickyForm.css";
 
+// framer motion function for the sticky form
 const stickyFormVariant = {
   initial: {
     y: -100,
@@ -12,6 +13,22 @@ const stickyFormVariant = {
     scale: 2.5,
     x: "60vw",
     y: "10vw",
+  },
+  transition: {
+    duration: 0.4,
+  },
+};
+
+// create framer motion variable for animating the create button
+const createButtonVariant = {
+  whileHover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {
+      yoyo: Infinity,
+      duration: 0.4,
+    },
   },
 };
 
@@ -75,7 +92,13 @@ const StickyForm = (props) => {
         onChange={handleChange}
       />
       <br />
-      <input id="createButton" type="submit" value={props.label} />
+      <motion.input
+        id="createButton"
+        type="submit"
+        value={props.label}
+        variants={createButtonVariant}
+        whileHover="whileHover"
+      />
       {/* <input type="submit" value={props.label} /> */}
     </motion.form>
   );
