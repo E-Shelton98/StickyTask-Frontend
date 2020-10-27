@@ -134,11 +134,13 @@ const Whiteboard = (props) => {
 	};
 
 	const [dropDown, setDropDown] = useState(false)
+	console.log('drop down',dropDown)
 	
 
 	return (
-		<div className='Whiteboard-Div'>
-			{dropDown ? (<button className='add-sticky' onClick={setDropDown(!dropDown)}>Sticky Task +</button>) : 	(	<Route
+		<div className='Whiteboard-Div' >
+			<div className='createForm'>
+				{dropDown===false ? (<button className='add-sticky' onClick={() => {setDropDown(true)}}>Sticky Task +</button>	) : (	<Route
 				exact
 				path='/'
 				render={(rp) => (
@@ -146,10 +148,19 @@ const Whiteboard = (props) => {
 						{...rp}
 						label='create'
 						sticky={emptySticky}
+						setDropDown={setDropDown}
 						handleSubmit={handleCreate}
 					/>
 				)}
 			/>)}
+			</div>
+			
+
+
+			{dropDown===true ? (<div className='outsideClick' onClick={() => {setDropDown(false)}}></div>) : null}
+			
+				
+		
 			
 	
 			<Route
