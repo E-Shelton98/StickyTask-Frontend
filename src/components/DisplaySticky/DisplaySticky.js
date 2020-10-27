@@ -1,11 +1,28 @@
 //import React
-import React from 'react';
+import React from "react";
+// import Framer Motion
+import { motion } from "framer-motion";
+
 //Import Component CSS
 import './DisplaySticky.css';
+
+// create framer motion variable for animating the done button
+const doneButtonVariant = {
+  whileHover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {
+      yoyo: Infinity,
+      duration: 0.4,
+    },
+  },
+};
 
 //Create DisplaySticky Component
 const DisplaySticky = (props) => {
 	let stickies = props.stickies;
+
 	console.log(stickies);
 
 	return (
@@ -33,7 +50,6 @@ const DisplaySticky = (props) => {
 								}}>
 								Done
 							</button>
-
 							<button
 								className='editStickyButton'
 								onClick={() => {
@@ -43,7 +59,6 @@ const DisplaySticky = (props) => {
 								}}>
 								Edit
 							</button>
-
 							<div className='sticky-delete-and-add-person-container'>
 								<section
 									class='far fa-trash-alt'
