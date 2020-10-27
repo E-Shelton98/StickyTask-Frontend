@@ -3,22 +3,22 @@ import React from "react";
 import "./StickyForm.css";
 
 const StickyForm = (props) => {
+  console.log('sticky form props', props)
   //State for form data
   const [formData, setFormData] = React.useState(props.sticky);
 
   //handleSubmit function to list data to App
   const handleSubmit = (event) => {
-    // event.preventDefault()
     console.log("this is formData: ", formData);
     props.handleSubmit(formData);
-    // props.history.push("/");
+    props.history.push("/");
   };
   //handleChange for input of form data
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={() => {handleSubmit()}}>
       <label id="task-name">Task Name</label>
       <input
         type="text"

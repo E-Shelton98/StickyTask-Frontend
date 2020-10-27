@@ -5,7 +5,6 @@ import './Done.css';
 
 //Create DisplaySticky Component
 const Done = (props) => {
-	console.log('Display done stickies props', props);
 	let stickies = props.stickies;
 
 	return (
@@ -44,7 +43,7 @@ const Done = (props) => {
 							</section>
 						</div>
 					))}
-					<i class='far fa-trash-alt' onClick={props.deleteAllStickies}></i>
+					<i className='far fa-trash-alt' onClick={props.deleteAllStickies}></i>
 				</div>
 			) : (
 				<h3>No Completed Tasks Yet!</h3>

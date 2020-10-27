@@ -15,7 +15,7 @@ const Whiteboard = (props) => {
 
 	// State to hold Sticky List
 	const [stickies, setStickies] = useState([]);
-	console.log('stickies', stickies);
+
 
 	const stickiesToFilter = stickies.data;
 	let stickiesToDo = [];
@@ -29,7 +29,7 @@ const Whiteboard = (props) => {
 		? (stickiesDone = stickiesToFilter.filter((sticky) => sticky.done === true))
 		: console.log('something went wrong with the done filter');
 
-	console.log('false', stickiesToDo);
+
 	//empty sticky for Sticky Form
 	const emptySticky = {
 		task: '',
