@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import "./StickyForm.css";
 
 const StickyForm = (props) => {
+  console.log('sticky form props', props)
   //State for form data
   const [formData, setFormData] = React.useState(props.sticky);
 
@@ -19,7 +20,7 @@ const StickyForm = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={() => {handleSubmit()}}>
       <label id="task-name">Task Name</label>
       <input
         type="text"

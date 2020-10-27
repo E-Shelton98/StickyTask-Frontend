@@ -20,7 +20,6 @@ const notDoneButtonVariant = {
 
 //Create DisplaySticky Component
 const Done = (props) => {
-  console.log("Display done stickies props", props);
   let stickies = props.stickies;
 
   return (
@@ -65,7 +64,6 @@ const Done = (props) => {
               >
                 Not Done
               </motion.button>
-              <section>For Testing Only! {JSON.stringify(sticky.done)}</section>
               <section
                 onClick={() => {
                   props.deleteSticky(sticky);
