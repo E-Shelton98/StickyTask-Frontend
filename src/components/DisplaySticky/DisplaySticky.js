@@ -5,9 +5,6 @@ import { motion } from "framer-motion";
 //Import Component CSS
 import "./DisplaySticky.css";
 
-// create framer motion variable for animating the display sticky div
-const containerVariants = {};
-
 // create framer motion variable for animating the done button
 const doneButtonVariant = {
   whileHover: {
@@ -36,7 +33,6 @@ const DisplaySticky = (props) => {
               className="sticky"
               initial={{ opacity: 0.2 }}
               animate={{ opacity: 1 }}
-              variants={containerVariants}
               transition={{ duration: 1.5 }}
             >
               <section className="sticky-name">Name: {sticky.task}</section>
@@ -56,11 +52,6 @@ const DisplaySticky = (props) => {
                 animate={{}}
                 whileHover="whileHover"
                 initial={{}}
-                // whileHover={{
-                //     scale: 1.1,
-                //   textShadow: "0px 0px 8px rgb(255,255,255)",
-                //   boxShadow: "0px 0px 8px rgb(255,255,255)",
-                // }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   props.setDone(sticky);
