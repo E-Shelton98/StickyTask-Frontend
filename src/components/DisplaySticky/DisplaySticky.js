@@ -19,6 +19,18 @@ const doneButtonVariant = {
   },
 };
 
+const editButtonVariant = {
+  whileHover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {
+      yoyo: Infinity,
+      duration: 0.4,
+    },
+  },
+};
+
 //Create DisplaySticky Component
 const DisplaySticky = (props) => {
   let stickies = props.stickies;
@@ -53,8 +65,10 @@ const DisplaySticky = (props) => {
               >
                 Done
               </motion.button>
-              <button
+              <motion.button
                 className="editStickyButton"
+                variants={editButtonVariant}
+                whileHover="whileHover"
                 onClick={() => {
                   props.selectSticky(sticky);
                   props.history.push("/edit");
@@ -62,15 +76,21 @@ const DisplaySticky = (props) => {
                 }}
               >
                 Edit
-              </button>
+              </motion.button>
               <div className="sticky-delete-and-add-person-container">
-                <section
+                <motion.section
+                  whileHover={{
+                    scale: 1.1,
+                    originX: 0,
+                    textShadow: "0px 0px 8px #ff0000",
+                  }}
+                  whileTap={{ scale: 0.9 }}
                   class="far fa-trash-alt"
                   onClick={() => {
                     props.deleteSticky(sticky);
                     props.history.push("/");
                   }}
-                ></section>
+                ></motion.section>
                 <section className="sticky-add-person">+</section>
               </div>
             </div>
