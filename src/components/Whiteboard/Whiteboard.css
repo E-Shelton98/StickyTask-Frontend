@@ -1,5 +1,6 @@
 div.Whiteboard-Div {
     padding-top: 3%;
+    z-index: 0;
 }
 
 .outsideClick {
@@ -8,7 +9,7 @@ div.Whiteboard-Div {
     position: fixed;
     top: 0;
     width: 100vw;
-    z-index: 0;
+    z-index: 1;
     background-color: rgb(255,255,255, 0.7);
 
 }
@@ -23,5 +24,6 @@ div.Whiteboard-Div {
 }
 
 .createForm form{
-    position:inherit;
+    /* position:fixed; */
+    z-index:10;
 }

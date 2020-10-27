@@ -11,7 +11,7 @@ const StickyForm = (props) => {
     // event.preventDefault()
     console.log("this is formData: ", formData);
     props.handleSubmit(formData);
-    props.history.push("/");
+    // props.history.push("/");
   };
   //handleChange for input of form data
   const handleChange = (event) => {
