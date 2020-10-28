@@ -122,6 +122,7 @@ const DisplaySticky = (props) => {
                     props.history.push("/");
                   }}
                 ></motion.section>
+
                 <motion.section
                   className="sticky-add-person"
                   variants={addPersonButtonVariant}
