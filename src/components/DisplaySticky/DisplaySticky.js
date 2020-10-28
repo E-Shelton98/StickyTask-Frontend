@@ -78,15 +78,15 @@ const DisplaySticky = (props) => {
               dragElastic={0.2}
               dragMomentum={true}
             >
-              <section className="sticky-name">Name: {sticky.task}</section>
+              <section className="sticky-name">Name: <span className='font-roboto'>{sticky.task}</span></section>
               <section className="sticky-complete-by">
-                Complete By: {sticky.completeBy}
+                Complete By: <br/><span className='font-roboto'>{sticky.completeBy}</span>
               </section>
               <section className="sticky-workSpace">
-                Work Space: {sticky.workSpace}
+                Work Space: <span className='font-roboto'>{sticky.workSpace}</span>
               </section>
               <section className="sticky-description">
-                Description: {sticky.description}
+                Description: <span className='font-roboto'>{sticky.description}</span>
               </section>
               <motion.button
                 className="sticky-set-done"
@@ -97,10 +97,10 @@ const DisplaySticky = (props) => {
                   props.history.push("/");
                 }}
               >
-                Done
+                <span className='font-roboto'>Done</span>
               </motion.button>
               <motion.button
-                className="editStickyButton"
+                className="edit-sticky-button"
                 variants={editButtonVariant}
                 whileHover="whileHover"
                 onClick={() => {
@@ -109,14 +109,14 @@ const DisplaySticky = (props) => {
                   console.log(`edit button`, props.handleUpdate);
                 }}
               >
-                Edit
+                <span classname='font-roboto'>Edit</span>
               </motion.button>
               <div className="sticky-delete-and-add-person-container">
                 <motion.section
                   variants={deleteButtonVariant}
                   whileHover="whileHover"
                   whileTap={{ scale: 0.9 }}
-                  class="far fa-trash-alt"
+                  className="far fa-trash-alt"
                   onClick={() => {
                     props.deleteSticky(sticky);
                     props.history.push("/");
