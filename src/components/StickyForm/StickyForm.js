@@ -10,9 +10,9 @@ const stickyFormVariant = {
     y: -100,
   },
   animate: {
-    scale: 2.5,
-    x: "60vw",
-    y: "10vw",
+    scale: 1.5,
+    x: "-10vw",
+    y: "20vw",
   },
   transition: {
     duration: 0.4,
@@ -54,7 +54,7 @@ const StickyForm = (props) => {
         handleSubmit();
       }}
       variants={stickyFormVariant}
-      initial="inital"
+      //   initial="inital"
       animate="animate"
     >
       <label id="task-name">Task Name</label>
