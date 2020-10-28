@@ -17,7 +17,7 @@ function App() {
         animate={{ y: 0 }}
         transition={{ duration: 1.5, type: `spring`, stiffness: 120 }}
       >
-        Sticky Task
+        <h1 className='heading'>Sticky Task</h1>
       </motion.h1>
       <Whiteboard />
     </div>
