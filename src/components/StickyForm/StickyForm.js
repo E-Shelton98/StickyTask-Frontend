@@ -28,6 +28,7 @@ const StickyForm = (props) => {
         name="task"
         value={formData.task}
         onChange={handleChange}
+        required
       />
       <br />
       <label id="task-completeBy">Complete By</label>
