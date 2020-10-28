@@ -32,7 +32,7 @@ const DisplaySticky = (props) => {
 					<h2>To-Do</h2>
 					{stickies.map((sticky) => (
 						<div className='sticky'>
-							<section className='sticky-name'>Name: {sticky.task}</section>
+							<section className='sticky-name'>Task: {sticky.task}</section>
 							<section className='sticky-complete-by'>
 								Complete By: {sticky.completeBy}
 							</section>
