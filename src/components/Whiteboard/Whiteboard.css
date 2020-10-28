@@ -1,0 +1,54 @@
+div.Whiteboard-Div {
+    padding-top: 3%;
+    z-index: 0;
+}
+
+#add-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.add-sticky {
+    border: none;
+    border-radius: 30px;
+    border-color: white;
+    width: 100px;
+    height: 40px;
+    background-color: #1400ab;
+    color: white;
+}
+
+.add-person {
+    border: none;
+    border-radius: 30px;
+    width: 100px;
+    height: 40px;
+    background-color: #1400ab;
+    color: white;
+}
+
+.outsideClick {
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+    background-color: rgb(255,255,255, 0.7);
+
+}
+
+.createForm {
+    z-index: 2;
+    padding: 2%;
+}
+
+.createForm form{
+    position:fixed;
+    z-index:2;
+}
+.createPerson {
+    z-index:1;
+    position: relative;
+    padding: 2%;
+}
