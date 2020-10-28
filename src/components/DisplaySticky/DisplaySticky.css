@@ -1,17 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
 #sticky-display {
 	display: flex;
 	flex-direction: column;
 }
 
 .sticky {
+	box-sizing: border-box;
 	text-align: left;
 	border: 1px solid gray;
 	background-color: #ffff99;
-	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(4, minmax(90px, 110px));
     grid-template-rows: repeat(3, 1fr);
-    font-size: 15px;
+	font-size: 15px;
+	margin: 5px;
+	padding: 5px;
 }
 
 .sticky-name {
@@ -19,9 +24,11 @@
 	grid-row: 1;
 }
 
-.sticky-set-done {
+.sticky-set-done{
+	border: none;
+	box-shadow: 0px 1px 3px;
 	border-radius: 30px;
-	width: 100px;
+	width: 90px;
 	height: 40px;
 	background-color: #f2de78;
 	grid-column: 3;
@@ -29,9 +36,11 @@
 	margin: 5px;
 }
 
-.editStickyButton {
-	border-radius: 30px !important;
-	width: 100px;
+.edit-sticky-button {
+	border: none;
+	box-shadow: 0px 1px 3px;
+	border-radius: 30px;
+	width: 90px;
 	height: 40px;
 	background-color: #f2de78;
 	grid-column: 4;
@@ -53,17 +62,24 @@
 
 .sticky-complete-by {
 	grid-column: 1;
-    grid-row: 3;
-    padding: 5px;
+	grid-row: 3;
+	padding: 3px;
+	text-decoration: underline;
 }
 
 .sticky-workSpace {
 	grid-column: 2;
-    grid-row: 3;
-    padding: 5px;
+	grid-row: 3;
+	padding: 3px;
+	text-decoration: underline;
 }
 
 .sticky-description {
 	grid-column: 1/5;
 	grid-row: 2;
+}
+
+span.font-roboto {
+	font-family: 'Roboto';
+	text-decoration: none ;
 }
