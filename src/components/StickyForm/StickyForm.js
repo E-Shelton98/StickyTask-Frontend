@@ -44,7 +44,7 @@ const StickyForm = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   return (
-    <motion.div drag>
+    <motion.div drag dragElastic={0.2}>
       <motion.form
         onSubmit={() => {
           handleSubmit();
