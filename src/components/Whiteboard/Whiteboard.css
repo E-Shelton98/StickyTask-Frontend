@@ -33,3 +33,7 @@ div.Whiteboard-Div {
     /* position:fixed; */
     z-index:10;
 }
+.createPerson {
+    z-index:10;
+    position: relative;
+}
