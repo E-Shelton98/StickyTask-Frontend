@@ -3,6 +3,12 @@ div.Whiteboard-Div {
     z-index: 0;
 }
 
+.add-sticky {
+    border-radius: 30px;
+    width: 100px;
+    height: 40px;
+}
+
 .outsideClick {
     height: 100vh;
     left: 0;

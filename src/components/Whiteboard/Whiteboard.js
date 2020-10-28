@@ -142,6 +142,7 @@ const Whiteboard = (props) => {
 
 	return (
 		<div className='Whiteboard-Div' >
+			<hr />
 			<div className='createForm'>
 				{dropDown===false ? (<button className='add-sticky' onClick={() => {setDropDown(true)}}>Sticky Task +</button>	) : (	<Route
 				exact
@@ -162,7 +163,7 @@ const Whiteboard = (props) => {
 
 			{dropDown===true ? (<div className='outsideClick' onClick={() => {setDropDown(false)}}></div>) : null}
 			
-				
+			<hr />
 		
 			
 	
