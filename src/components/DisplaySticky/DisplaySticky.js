@@ -18,12 +18,24 @@ const doneButtonVariant = {
     },
   },
 };
-
+// create framer motion variable for animating the edit button
 const editButtonVariant = {
   whileHover: {
     scale: 1.1,
     textShadow: "0px 0px 8px rgb(255,255,255)",
     boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {
+      yoyo: Infinity,
+      duration: 0.4,
+    },
+  },
+};
+// create framer motion variable for animating the delete / trash can icon button
+const deleteButtonVariant = {
+  whileHover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px #ff0000",
+    boxShadow: "0px 0px 8px #ff0000",
     transition: {
       yoyo: Infinity,
       duration: 0.4,
@@ -48,6 +60,9 @@ const DisplaySticky = (props) => {
               initial={{ opacity: 0.2 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.5 }}
+              drag
+              dragConstraints={{ left: 0, top: 0, right: 0, bottom: 300 }}
+              dragElastic={0.2}
             >
               <section className="sticky-name">Name: {sticky.task}</section>
               <section className="sticky-complete-by">
@@ -84,11 +99,8 @@ const DisplaySticky = (props) => {
               </motion.button>
               <div className="sticky-delete-and-add-person-container">
                 <motion.section
-                  whileHover={{
-                    scale: 1.1,
-                    originX: 0,
-                    textShadow: "0px 0px 8px #ff0000",
-                  }}
+                  variants={deleteButtonVariant}
+                  whileHover="whileHover"
                   whileTap={{ scale: 0.9 }}
                   class="far fa-trash-alt"
                   onClick={() => {
