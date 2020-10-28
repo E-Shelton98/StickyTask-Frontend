@@ -10,12 +10,10 @@ const stickyFormVariant = {
     y: -100,
   },
   animate: {
-    scale: 1.5,
-    x: "-10vw",
-    y: "20vw",
-  },
-  transition: {
-    duration: 0.4,
+    scale: 2.5,
+    x: "45vw",
+    y: "45vw",
+    rotateX: 360,
   },
 };
 
@@ -56,39 +54,46 @@ const StickyForm = (props) => {
       variants={stickyFormVariant}
       //   initial="inital"
       animate="animate"
+      transition={{
+        duration: 0.4,
+        ease: `easeOut`,
+      }}
     >
-      <label id="task-name">Task Name</label>
       <input
         type="text"
         id="form-task"
         name="task"
+        placeholder="Task Name"
         value={formData.task}
         onChange={handleChange}
       />
       <br />
-      <label id="task-completeBy">Complete By</label>
+
       <input
         type="text"
         id="form-completeBy"
         name="completeBy"
+        placeholder="Complete By"
         value={formData.completeBy}
         onChange={handleChange}
       />
       <br />
-      <label id="task-workSpace">Task Location</label>
+
       <input
         type="text"
         id="form-workspace"
         name="workSpace"
+        placeholder="Task Location"
         value={formData.workSpace}
         onChange={handleChange}
       />
       <br />
-      <label id="task-description">Task Description</label>
+
       <input
         type="text"
         id="form-description"
         name="description"
+        placeholder="Task Description"
         value={formData.description}
         onChange={handleChange}
       />
