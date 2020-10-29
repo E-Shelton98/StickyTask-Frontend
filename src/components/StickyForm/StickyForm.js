@@ -50,7 +50,6 @@ const StickyForm = (props) => {
           handleSubmit();
         }}
         variants={stickyFormVariant}
-        // animate={{ rotateX: 360, scale: 1.4, x: 195, y: 100 }}
         animate="animate"
         transition={{
           duration: 0.4,
