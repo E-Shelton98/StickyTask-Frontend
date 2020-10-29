@@ -26,7 +26,6 @@ const Done = (props) => {
     <>
       {stickies && stickies.length > 0 ? (
         <div id="sticky-display">
-          <h2>Done</h2>
           {stickies.map((sticky) => (
             <motion.div
               initial={{ y: 100 }}
