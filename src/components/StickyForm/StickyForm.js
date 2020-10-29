@@ -8,8 +8,8 @@ import "./StickyForm.css";
 const stickyFormVariant = {
   animate: {
     scale: 2.5,
-    x: "40vw",
-    y: "35vw",
+    x: 90,
+    y: 150,
     rotateX: 360,
   },
 };

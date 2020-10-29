@@ -34,15 +34,20 @@ const Done = (props) => {
               transition={{ type: `spring`, stiffness: 120 }}
               className="sticky"
             >
-              <section className="sticky-name">Name: {sticky.task}</section>
+              <section className="sticky-name">
+                Name: <span className="font-roboto">{sticky.task}</span>
+              </section>
               <section className="sticky-complete-by">
-                Complete By: {sticky.completeBy}
+                Complete By: <br />
+                <span className="font-roboto">{sticky.completeBy}</span>
               </section>
               <section className="sticky-workSpace">
-                Work Space: {sticky.workSpace}
+                Work Space: <br />
+                <span className="font-roboto">{sticky.workSpace}</span>
               </section>
               <section className="sticky-description">
-                Description: {sticky.description}
+                Description: <br />
+                <span className="font-roboto">{sticky.description}</span>
               </section>
               <section className="sticky-add-person">+</section>
               <motion.button
