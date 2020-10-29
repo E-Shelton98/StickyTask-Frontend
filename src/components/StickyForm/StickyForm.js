@@ -7,11 +7,10 @@ import "./StickyForm.css";
 // framer motion function for the sticky form
 const stickyFormVariant = {
   animate: {
-    scale: 2.5,
-    x: 90,
-    y: 150,
-
     rotateX: 360,
+    scale: 1.4,
+    x: 190,
+    y: 80,
   },
 };
 
@@ -51,6 +50,7 @@ const StickyForm = (props) => {
           handleSubmit();
         }}
         variants={stickyFormVariant}
+        // animate={{ rotateX: 360, scale: 1.4, x: 195, y: 100 }}
         animate="animate"
         transition={{
           duration: 0.4,

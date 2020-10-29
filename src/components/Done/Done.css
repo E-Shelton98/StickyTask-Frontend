@@ -1,0 +1,19 @@
+.sticky-not-done {
+	border: none;
+	box-shadow: 0px 1px 3px;
+	border-radius: 30px;
+	width: 90px;
+	height: 40px;
+	background-color: #f2de78;
+	grid-column: 4;
+	grid-row: 1;
+	margin: 5px;
+}
+
+.delete-container {
+	grid-column: 4;
+	grid-row: 3;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}

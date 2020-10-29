@@ -18,6 +18,19 @@ const notDoneButtonVariant = {
   },
 };
 
+// create framer motion variable for animating the delete / trash can icon button
+const deleteButtonVariant = {
+  whileHover: {
+    scale: 1.3,
+    textShadow: "0px 0px 8px #ff0000",
+    boxShadow: "0px 0px 8px #ff0000",
+    transition: {
+      yoyo: Infinity,
+      duration: 0.4,
+    },
+  },
+};
+
 //Create DisplaySticky Component
 const Done = (props) => {
   let stickies = props.stickies;
@@ -30,47 +43,50 @@ const Done = (props) => {
             <motion.div
               initial={{ y: 100 }}
               animate={{ y: 0 }}
-              transition={{ type: `spring`, stiffness: 120 }}
+              transition={{ type: `spring`, stiffness: 120, duration: 0.1 }}
               className="sticky"
             >
-              <section className="sticky-name">Name: {sticky.task}</section>
+              <section className="sticky-name">
+                Name: <span className="font-roboto">{sticky.task}</span>
+              </section>
               <section className="sticky-complete-by">
-                Complete By: {sticky.completeBy}
+                Complete By:{" "}
+                <span className="font-roboto">{sticky.completeBy}</span>
               </section>
               <section className="sticky-workSpace">
-                Work Space: {sticky.workSpace}
+                Work Space:{" "}
+                <span className="font-roboto">{sticky.workSpace}</span>
               </section>
               <section className="sticky-description">
-                Description: {sticky.description}
+                Description:{" "}
+                <span className="font-roboto">{sticky.description}</span>
               </section>
-              <section className="sticky-add-person">+</section>
               <motion.button
-                className="sticky-set-done"
+                className="sticky-not-done"
                 initial={{}}
                 animate={{}}
                 variants={notDoneButtonVariant}
                 whileHover="whileHover"
-                // whileHover={{
-                //   scale: 1.1,
-                //   textShadow: "0px 0px 8px rgb(255,255,255)",
-                //   boxShadow: "0px 0px 8px rgb(255,255,255)",
-                // }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   props.setUnDone(sticky);
                   props.history.push("/");
                 }}
               >
-                Not Done
+                <span className="font-roboto">Not Done</span>
               </motion.button>
-              <section
-                onClick={() => {
-                  props.deleteSticky(sticky);
-                  props.history.push("/");
-                }}
-              >
-                DELETE STICKY!
-              </section>
+              <div className="delete-container">
+                <motion.section
+                  className="far fa-trash-alt"
+                  variants={deleteButtonVariant}
+                  whileHover="whileHover"
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    props.deleteSticky(sticky);
+                    props.history.push("/");
+                  }}
+                ></motion.section>
+              </div>
             </motion.div>
           ))}
           <i class="far fa-trash-alt" onClick={props.deleteAllStickies}></i>
