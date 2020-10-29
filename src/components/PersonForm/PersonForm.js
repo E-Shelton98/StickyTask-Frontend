@@ -5,7 +5,7 @@ import "./PersonForm.css";
 // framer motion function for the person form
 const personFormVariant = {
   transition: {
-    duration: 4.4,
+    duration: 20.4,
     type: "spring",
     ease: "easeOut",
     stiffness: 120,

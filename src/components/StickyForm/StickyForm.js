@@ -8,7 +8,7 @@ import DisplayPeople from "../DisplayPeople/DisplayPeople";
 // framer motion function for the sticky form
 const stickyFormVariant = {
   transition: {
-    duration: 4.4,
+    duration: 20.4,
     type: "spring",
     ease: "easeOut",
     stiffness: 120,
@@ -19,8 +19,7 @@ const stickyFormVariant = {
 const createButtonVariant = {
   whileHover: {
     scale: 1.1,
-    textShadow: "0px 0px 8px rgb(255,255,255)",
-    boxShadow: "0px 0px 8px rgb(255,255,255)",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
