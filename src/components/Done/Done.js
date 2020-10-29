@@ -33,19 +33,18 @@ const Done = (props) => {
               transition={{ type: `spring`, stiffness: 120 }}
               className="sticky"
             >
-              <section className="sticky-name">Name: {sticky.task}</section>
+              <section className="sticky-name">Name: <span className='font-roboto'>{sticky.task}</span></section>
               <section className="sticky-complete-by">
-                Complete By: {sticky.completeBy}
+                Complete By: <span className='font-roboto'>{sticky.completeBy}</span>
               </section>
               <section className="sticky-workSpace">
-                Work Space: {sticky.workSpace}
+                Work Space: <span className='font-roboto'>{sticky.workSpace}</span>
               </section>
               <section className="sticky-description">
-                Description: {sticky.description}
+                Description: <span className='font-roboto'>{sticky.description}</span>
               </section>
-              <section className="sticky-add-person">+</section>
               <motion.button
-                className="sticky-set-done"
+                className="sticky-not-done"
                 initial={{}}
                 animate={{}}
                 variants={notDoneButtonVariant}
@@ -61,16 +60,17 @@ const Done = (props) => {
                   props.history.push("/");
                 }}
               >
-                Not Done
+                <span className='font-roboto'>Not Done</span>
               </motion.button>
-              <section
-                onClick={() => {
-                  props.deleteSticky(sticky);
-                  props.history.push("/");
-                }}
-              >
-                DELETE STICKY!
-              </section>
+              <div className='delete-container'>
+                <section className='far fa-trash-alt'
+                  onClick={() => {
+                    props.deleteSticky(sticky);
+                    props.history.push("/");
+                  }}
+                >
+                </section>
+              </div>
             </motion.div>
           ))}
           <i class="far fa-trash-alt" onClick={props.deleteAllStickies}></i>
