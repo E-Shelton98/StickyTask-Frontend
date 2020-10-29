@@ -45,9 +45,10 @@ const Done = (props) => {
               animate={{ y: 0 }}
               transition={{ type: `spring`, stiffness: 120, duration: 0.1 }}
               className="sticky"
+              key={sticky._id}
             >
               <section className="sticky-name">
-                Name: <span className="font-roboto">{sticky.task}</span>
+                Task: <span className="font-roboto">{sticky.task}</span>
               </section>
               <section className="sticky-complete-by">
                 Complete By:{" "}
@@ -89,7 +90,7 @@ const Done = (props) => {
               </div>
             </motion.div>
           ))}
-          <i class="far fa-trash-alt" onClick={props.deleteAllStickies}></i>
+          <i className="far fa-trash-alt" onClick={props.deleteAllStickies}></i>
         </div>
       ) : (
         <h3>No Completed Tasks Yet!</h3>

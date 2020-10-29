@@ -74,10 +74,11 @@ const DisplaySticky = (props) => {
               drag
               dragConstraints={{ left: 0, top: 0, right: 0, bottom: 300 }}
               dragElastic={0.2}
-              dragMomentum={true}
+			  dragMomentum={true}
+			  key={sticky._id}
             >
               <section className="sticky-name">
-                Name: <span className="font-roboto">{sticky.task}</span>
+                Task: <span className="font-roboto">{sticky.task}</span>
               </section>
               <section className="sticky-complete-by">
                 Complete By: <br />
