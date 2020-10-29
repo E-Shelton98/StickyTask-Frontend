@@ -45,7 +45,7 @@ const StickyForm = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   return (
-    <motion.div drag dragElastic={0.2}>
+    <motion.div drag dragElastic={0.2} className=''>
       <motion.form
         onSubmit={() => {
           handleSubmit();
@@ -65,7 +65,6 @@ const StickyForm = (props) => {
           value={formData.task}
           onChange={handleChange}
         />
-        <br />
 
         <input
           type="text"
@@ -75,7 +74,7 @@ const StickyForm = (props) => {
           value={formData.completeBy}
           onChange={handleChange}
         />
-        <br />
+      
 
         <input
           type="text"
@@ -85,7 +84,7 @@ const StickyForm = (props) => {
           value={formData.workSpace}
           onChange={handleChange}
         />
-        <br />
+      
 
         <input
           type="text"
@@ -95,18 +94,18 @@ const StickyForm = (props) => {
           value={formData.description}
           onChange={handleChange}
         />
-        <br />
+      
         <DisplayPeople url={props.url} setFormData={setFormData} formData={formData}/>
-        <br/>
+      
         <motion.input
           id="createButton"
           type="submit"
-          value={props.label}
+          value='Create'
           variants={createButtonVariant}
           whileHover="whileHover"
           whileTap="whileTap"
         />
-        {/* <input type="submit" value={props.label} /> */}
+   
       </motion.form>
     </motion.div>
   );
