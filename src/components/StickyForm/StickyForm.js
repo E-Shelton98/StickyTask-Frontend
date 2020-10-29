@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 //import Component CSS
 import "./StickyForm.css";
+import DisplayPeople from '../DisplayPeople/DisplayPeople'
 
 // framer motion function for the sticky form
 const stickyFormVariant = {
@@ -29,13 +30,13 @@ const createButtonVariant = {
 };
 
 const StickyForm = (props) => {
-  console.log("sticky form props", props);
   //State for form data
   const [formData, setFormData] = React.useState(props.sticky);
 
   //handleSubmit function to list data to App
   const handleSubmit = (event) => {
     console.log("this is formData: ", formData);
+    /* event.preventDefault() */
     props.handleSubmit(formData);
     props.history.push("/");
   };
@@ -95,6 +96,8 @@ const StickyForm = (props) => {
           onChange={handleChange}
         />
         <br />
+        <DisplayPeople url={props.url} setFormData={setFormData} formData={formData}/>
+        <br/>
         <motion.input
           id="createButton"
           type="submit"

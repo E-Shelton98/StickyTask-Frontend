@@ -47,7 +47,7 @@ const Whiteboard = (props) => {
 		completeBy: '',
 		workSpace: '',
 		description: '',
-		// assignTo: ''
+		assignTo: ''
 	};
 
 	//  Select Sticky for a user to select a sticky to update/edit
@@ -75,7 +75,7 @@ const Whiteboard = (props) => {
 
 	//handleCreate Function for creating stickies in DisplayStickies
 	const handleCreate = (newSticky) => {
-		console.log(newSticky);
+		console.log('This is newSticky: ', newSticky);
 		fetch(url + '/sticky/', {
 			method: 'post',
 			headers: {
@@ -92,7 +92,6 @@ const Whiteboard = (props) => {
 			body: JSON.stringify(sticky),
 		}).then((response) => {
 			getStickies();
-			console.log(`sticky`, sticky);
 		});
 	};
 
@@ -185,6 +184,7 @@ const Whiteboard = (props) => {
 									sticky={emptySticky}
 									setDropDown={setDropDown}
 									handleSubmit={handleCreate}
+									url={url}
 								/>
 							)}
 						/>
