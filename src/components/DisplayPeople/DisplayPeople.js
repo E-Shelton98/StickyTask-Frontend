@@ -1,35 +1,48 @@
-import React from 'react'
+import React from 'react';
 
-import './DisplayPeople.css'
+import './DisplayPeople.css';
 
 const DisplayPeople = (props) => {
-    console.log('display people props', props)
-  //state to hold people list
-  const [people, setPeople] = React.useState([])
-  
-  const getPeople = () => {
-      fetch(props.url + "/person/")
-      .then((res) => res.json())
-      .then((data) => setPeople(data));
-    };
-    
-    React.useEffect(() => {
-        getPeople();
-    }, []);
-    
-    const peopleArr = people.data
-    console.log('people',peopleArr)
+	const formData = props.formData;
 
+	//state to hold people list
+	const [people, setPeople] = React.useState([]);
 
-    return(
-       <>
-          {peopleArr && peopleArr.length > 0 ? (<select> {peopleArr.map((person) => (
-            <option key={person._id} name='assignTo' value='5f9984597c1ed0001ef5ec86'>{person.name}</option>
-        ))}  
-        </select>) : (<p>Add Some Taskers!</p>)}
-       </>
-    )
+	const getPeople = () => {
+		fetch(props.url + '/person/')
+			.then((res) => res.json())
+			.then((data) => setPeople(data));
+	};
 
-}
+	React.useEffect(() => {
+		getPeople();
+	});
 
-export default DisplayPeople
+	const peopleArr = people.data;
+
+	const handleChange = (event) => {
+		console.log(event.target.value);
+    let newFormData = { ...formData };
+    newFormData.assignTo = event.target.value
+    console.log('this is newFormData: ', newFormData);
+		props.setFormData(newFormData)
+	};
+
+	return (
+		<>
+			{peopleArr && peopleArr.length > 0 ? (
+				<select onChange={(event) => handleChange(event)}>
+					{peopleArr.map((person) => (
+						<option key={person._id} name='assignTo' value={person._id}>
+							{person.name}
+						</option>
+					))}
+				</select>
+			) : (
+				<p>Add Some Taskers!</p>
+			)}
+		</>
+	);
+};
+
+export default DisplayPeople;
