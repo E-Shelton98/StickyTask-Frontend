@@ -4,20 +4,14 @@ import "./PersonForm.css";
 
 // framer motion function for the person form
 const personFormVariant = {
-  animate: {
-    rotateX: 360,
-    scale: 1,
-    x: 0,
-    y: 50,
-  },
+  animate: {},
 };
 
 // create framer motion variable for animating the add tasker button
 const addTaskerButtonVariant = {
   whileHover: {
     scale: 1.1,
-    textShadow: "0px 0px 8px rgb(255,255,255)",
-    boxShadow: "0px 0px 8px rgb(255,255,255)",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
@@ -61,13 +55,9 @@ const PersonForm = (props) => {
 
   return (
     <motion.form
-      drag
       variants={personFormVariant}
       animate="animate"
-      transition={{
-        duration: 0.8,
-        ease: `easeOut`,
-      }}
+      transition={{}}
       onSubmit={() => {
         handleSubmit();
       }}

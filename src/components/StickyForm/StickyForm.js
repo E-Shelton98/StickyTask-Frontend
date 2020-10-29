@@ -3,16 +3,11 @@ import React from "react";
 import { motion } from "framer-motion";
 //import Component CSS
 import "./StickyForm.css";
-import DisplayPeople from '../DisplayPeople/DisplayPeople'
+import DisplayPeople from "../DisplayPeople/DisplayPeople";
 
 // framer motion function for the sticky form
 const stickyFormVariant = {
-  animate: {
-    rotateX: 360,
-    scale: 1.4,
-    x: 190,
-    y: 80,
-  },
+  animate: {},
 };
 
 // create framer motion variable for animating the create button
@@ -45,69 +40,74 @@ const StickyForm = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   return (
-    <motion.div drag dragElastic={0.2} className=''>
-      <motion.form
-        onSubmit={() => {
-          handleSubmit();
-        }}
-        variants={stickyFormVariant}
-        animate="animate"
-        transition={{
-          duration: 0.4,
-          ease: `easeOut`,
-        }}
-      >
-        <input
-          type="text"
-          id="form-task"
-          name="task"
-          placeholder="Task Name"
-          value={formData.task}
-          onChange={handleChange}
-        />
 
-        <input
-          type="text"
-          id="form-completeBy"
-          name="completeBy"
-          placeholder="Complete By"
-          value={formData.completeBy}
-          onChange={handleChange}
-        />
-      
+    <motion.form
+      onSubmit={() => {
+        handleSubmit();
+      }}
+      variants={stickyFormVariant}
+      animate="animate"
+      transition={{
+        duration: 0.4,
+        ease: `easeOut`,
+      }}
+    >
+      <input
+        type="text"
+        id="form-task"
+        name="task"
+        placeholder="Task Name"
+        value={formData.task}
+        onChange={handleChange}
+      />
+      <br />
 
-        <input
-          type="text"
-          id="form-workspace"
-          name="workSpace"
-          placeholder="Task Location"
-          value={formData.workSpace}
-          onChange={handleChange}
-        />
-      
+      <input
+        type="text"
+        id="form-completeBy"
+        name="completeBy"
+        placeholder="Complete By"
+        value={formData.completeBy}
+        onChange={handleChange}
+      />
+      <br />
 
-        <input
-          type="text"
-          id="form-description"
-          name="description"
-          placeholder="Task Description"
-          value={formData.description}
-          onChange={handleChange}
-        />
-      
-        <DisplayPeople url={props.url} setFormData={setFormData} formData={formData}/>
-      
-        <motion.input
-          id="createButton"
-          type="submit"
-          value='Create'
-          variants={createButtonVariant}
-          whileHover="whileHover"
-          whileTap="whileTap"
-        />
-   
-      </motion.form>
-    </motion.div>
+      <input
+        type="text"
+        id="form-workspace"
+        name="workSpace"
+        placeholder="Task Location"
+        value={formData.workSpace}
+        onChange={handleChange}
+      />
+      <br />
+
+      <input
+        type="text"
+        id="form-description"
+        name="description"
+        placeholder="Task Description"
+        value={formData.description}
+        onChange={handleChange}
+      />
+      <br />
+      <DisplayPeople
+        url={props.url}
+        setFormData={setFormData}
+        formData={formData}
+      />
+      <br />
+      <motion.input
+        id="createButton"
+        type="submit"
+        value={props.label}
+        variants={createButtonVariant}
+        whileHover="whileHover"
+        whileTap="whileTap"
+      />
+      {/* <input type="submit" value={props.label} /> */}
+    </motion.form>
+
   );
 };
 

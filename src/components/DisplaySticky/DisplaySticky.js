@@ -10,8 +10,7 @@ import "./DisplaySticky.css";
 const doneButtonVariant = {
   whileHover: {
     scale: 1.1,
-    textShadow: "0px 0px 8px rgb(255,255,255)",
-    boxShadow: "0px 0px 8px rgb(255,255,255)",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
@@ -22,8 +21,7 @@ const doneButtonVariant = {
 const editButtonVariant = {
   whileHover: {
     scale: 1.1,
-    textShadow: "0px 0px 8px rgb(255,255,255)",
-    boxShadow: "0px 0px 8px rgb(255,255,255)",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
@@ -34,8 +32,7 @@ const editButtonVariant = {
 const deleteButtonVariant = {
   whileHover: {
     scale: 1.1,
-    textShadow: "0px 0px 8px #ff0000",
-    boxShadow: "0px 0px 8px #ff0000",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
@@ -47,8 +44,7 @@ const deleteButtonVariant = {
 const addPersonButtonVariant = {
   whileHover: {
     scale: 1.1,
-    textShadow: "0px 0px 8px #008000",
-    boxShadow: "0px 0px 8px #008000",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
@@ -59,7 +55,6 @@ const addPersonButtonVariant = {
 //Create DisplaySticky Component
 const DisplaySticky = (props) => {
   let stickies = props.stickies;
-
 
   return (
     <>
