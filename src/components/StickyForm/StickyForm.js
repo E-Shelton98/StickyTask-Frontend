@@ -7,7 +7,12 @@ import DisplayPeople from "../DisplayPeople/DisplayPeople";
 
 // framer motion function for the sticky form
 const stickyFormVariant = {
-  animate: {},
+  transition: {
+    duration: 4.4,
+    type: "spring",
+    ease: "easeOut",
+    stiffness: 120,
+  },
 };
 
 // create framer motion variable for animating the create button
@@ -40,18 +45,15 @@ const StickyForm = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   return (
-
     <motion.form
       onSubmit={() => {
         handleSubmit();
       }}
       className="stickyForm"
       variants={stickyFormVariant}
-      animate="animate"
-      transition={{
-        duration: 0.4,
-        ease: `easeOut`,
-      }}
+      initial={{ y: 0 }}
+      animate={{ y: 10 }}
+      transition="transition"
     >
       <input
         type="text"
@@ -61,7 +63,6 @@ const StickyForm = (props) => {
         value={formData.task}
         onChange={handleChange}
       />
-    
 
       <input
         type="text"
@@ -71,7 +72,6 @@ const StickyForm = (props) => {
         value={formData.completeBy}
         onChange={handleChange}
       />
-      
 
       <input
         type="text"
@@ -81,7 +81,6 @@ const StickyForm = (props) => {
         value={formData.workSpace}
         onChange={handleChange}
       />
-     
 
       <input
         type="text"
@@ -91,24 +90,22 @@ const StickyForm = (props) => {
         value={formData.description}
         onChange={handleChange}
       />
-    
+
       <DisplayPeople
         url={props.url}
         setFormData={setFormData}
         formData={formData}
       />
-      
+
       <motion.input
         id="createButton"
         type="submit"
-        value='Add Sticky'
+        value="Add Sticky"
         variants={createButtonVariant}
         whileHover="whileHover"
         whileTap="whileTap"
       />
-     
     </motion.form>
-
   );
 };
 
