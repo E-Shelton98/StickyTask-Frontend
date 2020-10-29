@@ -9,8 +9,8 @@ const stickyFormVariant = {
   animate: {
     rotateX: 360,
     scale: 1.4,
-    x: 175,
-    y: 100,
+    x: 190,
+    y: 80,
   },
 };
 
