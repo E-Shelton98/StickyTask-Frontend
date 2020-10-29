@@ -3,6 +3,17 @@ div.Whiteboard-Div {
     z-index: 0;
 }
 
+hr {
+    text-align: center;
+    border: none;
+    height: 3px;
+    background: black;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+
 #add-buttons {
     display: flex;
     justify-content: space-around;
