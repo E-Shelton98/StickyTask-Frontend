@@ -55,6 +55,7 @@ const PersonForm = (props) => {
 
   return (
     <motion.form
+      className='personForm'
       variants={personFormVariant}
       animate="animate"
       transition={{}}
@@ -64,6 +65,7 @@ const PersonForm = (props) => {
     >
       <input
         type="text"
+        placeholder="Tasker's Name"
         id="person-name"
         name="name"
         value={formData.name}
@@ -76,7 +78,7 @@ const PersonForm = (props) => {
         whileTap="whileTap"
         id="personButton"
         type="submit"
-        value="Add Tasker!"
+        value="Add Tasker"
       />
     </motion.form>
   );

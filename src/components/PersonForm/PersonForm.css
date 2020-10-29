@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+.personForm {
+    margin-top: 60px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 75px;
+    background-color:red;
+    align-items: center;
+}
+
+#personButton {
+    border: none;
+    border-radius: 30px;
+    width: 120px;
+    height: 30px;
+    background-color: #1400ab;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 400;
+}

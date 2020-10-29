@@ -45,6 +45,7 @@ const StickyForm = (props) => {
       onSubmit={() => {
         handleSubmit();
       }}
+      className="stickyForm"
       variants={stickyFormVariant}
       animate="animate"
       transition={{
@@ -60,7 +61,7 @@ const StickyForm = (props) => {
         value={formData.task}
         onChange={handleChange}
       />
-      <br />
+    
 
       <input
         type="text"
@@ -70,7 +71,7 @@ const StickyForm = (props) => {
         value={formData.completeBy}
         onChange={handleChange}
       />
-      <br />
+      
 
       <input
         type="text"
@@ -80,7 +81,7 @@ const StickyForm = (props) => {
         value={formData.workSpace}
         onChange={handleChange}
       />
-      <br />
+     
 
       <input
         type="text"
@@ -90,22 +91,22 @@ const StickyForm = (props) => {
         value={formData.description}
         onChange={handleChange}
       />
-      <br />
+    
       <DisplayPeople
         url={props.url}
         setFormData={setFormData}
         formData={formData}
       />
-      <br />
+      
       <motion.input
         id="createButton"
         type="submit"
-        value={props.label}
+        value='Add Sticky'
         variants={createButtonVariant}
         whileHover="whileHover"
         whileTap="whileTap"
       />
-      {/* <input type="submit" value={props.label} /> */}
+     
     </motion.form>
 
   );
