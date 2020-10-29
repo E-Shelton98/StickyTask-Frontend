@@ -47,7 +47,7 @@ const Whiteboard = (props) => {
 		completeBy: '',
 		workSpace: '',
 		description: '',
-		// assignTo: ''
+		assignTo: ''
 	};
 
 	//  Select Sticky for a user to select a sticky to update/edit
@@ -185,6 +185,7 @@ const Whiteboard = (props) => {
 									sticky={emptySticky}
 									setDropDown={setDropDown}
 									handleSubmit={handleCreate}
+									url={url}
 								/>
 							)}
 						/>

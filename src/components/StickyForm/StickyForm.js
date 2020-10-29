@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 //import Component CSS
 import "./StickyForm.css";
+import DisplayPeople from '../DisplayPeople/DisplayPeople'
 
 // framer motion function for the sticky form
 const stickyFormVariant = {
@@ -96,6 +97,8 @@ const StickyForm = (props) => {
           onChange={handleChange}
         />
         <br />
+        <DisplayPeople url={props.url}/>
+        <br/>
         <motion.input
           id="createButton"
           type="submit"
