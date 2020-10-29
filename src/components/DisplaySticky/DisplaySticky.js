@@ -124,13 +124,12 @@ const DisplaySticky = (props) => {
                 ></motion.section>
 
                 <motion.section
-                  className="sticky-add-person"
+                  // className="sticky-add-person"
                   variants={addPersonButtonVariant}
                   whileHover="whileHover"
                   whileTap={{ scale: 0.9 }}
-                >
-                  +
-                </motion.section>
+                  className="fas fa-user-plus"
+                ></motion.section>
               </div>
             </motion.div>
           ))}
