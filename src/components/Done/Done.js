@@ -9,8 +9,7 @@ import "./Done.css";
 const notDoneButtonVariant = {
   whileHover: {
     scale: 1.1,
-    textShadow: "0px 0px 8px rgb(255,255,255)",
-    boxShadow: "0px 0px 8px rgb(255,255,255)",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
@@ -22,8 +21,7 @@ const notDoneButtonVariant = {
 const deleteButtonVariant = {
   whileHover: {
     scale: 1.3,
-    textShadow: "0px 0px 8px #ff0000",
-    boxShadow: "0px 0px 8px #ff0000",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
