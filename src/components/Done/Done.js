@@ -18,6 +18,19 @@ const notDoneButtonVariant = {
   },
 };
 
+// create framer motion variable for animating the delete / trash can icon button
+const deleteButtonVariant = {
+  whileHover: {
+    scale: 1.3,
+    textShadow: "0px 0px 8px #ff0000",
+    boxShadow: "0px 0px 8px #ff0000",
+    transition: {
+      yoyo: Infinity,
+      duration: 0.4,
+    },
+  },
+};
+
 //Create DisplaySticky Component
 const Done = (props) => {
   let stickies = props.stickies;
@@ -63,13 +76,16 @@ const Done = (props) => {
                 <span className="font-roboto">Not Done</span>
               </motion.button>
               <div className="delete-container">
-                <section
+                <motion.section
                   className="far fa-trash-alt"
+                  variants={deleteButtonVariant}
+                  whileHover="whileHover"
+                  whileTap={{ scale: 0.9 }}
                   onClick={() => {
                     props.deleteSticky(sticky);
                     props.history.push("/");
                   }}
-                ></section>
+                ></motion.section>
               </div>
             </motion.div>
           ))}

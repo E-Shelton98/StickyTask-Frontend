@@ -77,38 +77,45 @@ const DisplaySticky = (props) => {
               dragElastic={0.2}
               dragMomentum={true}
             >
-              <section className="sticky-name">Name: <span className='font-roboto'>{sticky.task}</span></section>
+              <section className="sticky-name">
+                Name: <span className="font-roboto">{sticky.task}</span>
+              </section>
               <section className="sticky-complete-by">
-                Complete By: <br/><span className='font-roboto'>{sticky.completeBy}</span>
+                Complete By: <br />
+                <span className="font-roboto">{sticky.completeBy}</span>
               </section>
               <section className="sticky-workSpace">
-                Work Space: <span className='font-roboto'>{sticky.workSpace}</span>
+                Work Space:{" "}
+                <span className="font-roboto">{sticky.workSpace}</span>
               </section>
               <section className="sticky-description">
-                Description: <span className='font-roboto'>{sticky.description}</span>
+                Description:{" "}
+                <span className="font-roboto">{sticky.description}</span>
               </section>
               <motion.button
                 className="sticky-set-done"
                 variants={doneButtonVariant}
                 whileHover="whileHover"
+                whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   props.setDone(sticky);
                   props.history.push("/");
                 }}
               >
-                <span className='font-roboto'>Done</span>
+                <span className="font-roboto">Done</span>
               </motion.button>
               <motion.button
                 className="edit-sticky-button"
                 variants={editButtonVariant}
                 whileHover="whileHover"
+                whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   props.selectSticky(sticky);
                   props.history.push("/edit");
                   console.log(`edit button`, props.handleUpdate);
                 }}
               >
-                <span className='font-roboto'>Edit</span>
+                <span className="font-roboto">Edit</span>
               </motion.button>
               <div className="sticky-delete-and-add-person-container">
                 <motion.section
