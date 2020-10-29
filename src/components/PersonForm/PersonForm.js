@@ -7,7 +7,7 @@ const personFormVariant = {
   transition: {
     duration: 20.4,
     type: "spring",
-    ease: "easeOut",
+    ease: "easeIn",
     stiffness: 120,
   },
 };
