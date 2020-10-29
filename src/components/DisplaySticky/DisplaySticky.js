@@ -66,7 +66,6 @@ const DisplaySticky = (props) => {
     <>
       {stickies && stickies.length > 0 ? (
         <div id="sticky-display">
-          <h2>To-Do</h2>
           {stickies.map((sticky) => (
             <motion.div
               className="sticky"
@@ -109,7 +108,7 @@ const DisplaySticky = (props) => {
                   console.log(`edit button`, props.handleUpdate);
                 }}
               >
-                <span classname='font-roboto'>Edit</span>
+                <span className='font-roboto'>Edit</span>
               </motion.button>
               <div className="sticky-delete-and-add-person-container">
                 <motion.section

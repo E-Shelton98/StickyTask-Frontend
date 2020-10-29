@@ -1,11 +1,9 @@
 // Import React
-import React, { useState } from "react";
+import React from "react";
 // import Framer Motion
 import { motion } from "framer-motion";
 //Import App CSS
 import "./App.css";
-//import Route
-import { Route } from "react-router-dom";
 //Import Sticky Form
 import Whiteboard from "./components/Whiteboard/Whiteboard";
 
