@@ -13,14 +13,16 @@ import TeamPage from "./components/TeamPage/TeamPage";
 function App() {
   return (
     <div className="App">
-      <motion.h1
-        className="heading"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1.5, type: `spring`, stiffness: 120 }}
-      >
-        Sticky Task
-      </motion.h1>
+      <Link to="/">
+        <motion.h1
+          className="heading"
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 1.5, type: `spring`, stiffness: 120 }}
+        >
+          Sticky Task
+        </motion.h1>
+      </Link>
 
       <Whiteboard />
       <div className="team-page">
