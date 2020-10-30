@@ -35,9 +35,10 @@ const Done = (props) => {
 
   return (
     <>
+      
       {stickies && stickies.length > 0 ? (
         <div id="sticky-display">
-          <i className="far fa-trash-alt" id='delete-all' onClick={props.deleteAllStickies}></i>
+       
           {stickies.map((sticky) => (
             <motion.div
               initial={{ y: 100 }}
@@ -77,6 +78,8 @@ const Done = (props) => {
               
               </div>
               <section className="sticky-task">{sticky.task}</section>
+
+              <div className='hide-info'>
               <section className="sticky-assignTo">
                 Assigned to:{" "}
                 <span className="font-roboto">{sticky.assignTo}</span>
@@ -93,6 +96,7 @@ const Done = (props) => {
                 Description:{" "}
                 <span className="font-roboto">{sticky.description}</span>
               </section>
+              </div>
             </motion.div>
           ))}
         </div>

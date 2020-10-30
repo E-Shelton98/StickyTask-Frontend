@@ -3,6 +3,7 @@
 div.Whiteboard-Div {
   padding-top: 3%;
   z-index: 0;
+  height: 100vh;
 }
 
 hr {

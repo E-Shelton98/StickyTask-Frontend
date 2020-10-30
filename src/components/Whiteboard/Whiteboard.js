@@ -318,7 +318,11 @@ const Whiteboard = (props) => {
           )}
         />
         <div className="done-stickies-dt">
-        <h2>Done</h2>
+          <div className="done-top-row">
+             <h2>Done</h2>
+        <i className="far fa-trash-alt" id='delete-all' onClick={props.deleteAllStickies}></i>
+          </div>
+       
           <Route
             exact
             path="/"
