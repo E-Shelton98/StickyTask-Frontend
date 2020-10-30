@@ -44,7 +44,7 @@ const deleteButtonVariant = {
 const DisplaySticky = (props) => {
 	let stickies = props.stickies;
 	console.log('this is stickies: ', stickies);
-  const people = props.people.data;
+  let people = props.people.data;
   console.log('this is people ', people)
 
 	return (
