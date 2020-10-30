@@ -19,6 +19,7 @@ function App() {
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ duration: 1.5, type: `spring`, stiffness: 120 }}
+          whileTap={{ scale: 0.7 }}
         >
           Sticky Task
         </motion.h1>
