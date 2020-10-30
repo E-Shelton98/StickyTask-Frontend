@@ -3,7 +3,9 @@
 div.Whiteboard-Div {
   padding-top: 3%;
   z-index: 0;
+
   height: 100vh;
+
 }
 
 hr {
@@ -67,12 +69,15 @@ hr {
 }
 .createPerson {
   z-index: 1;
-  position: relative;
+
+  /* position: relative; */
+
   padding: 2%;
 }
 .tabs {
   position: relative;
 }
+
 .desktop-view {
   display: none;
 }
@@ -85,4 +90,9 @@ hr {
     display: flex;
     flex-direction: column;
   }
+
+
+.team-image {
+  width: 5px;
+
 }

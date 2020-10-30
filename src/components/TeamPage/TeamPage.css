@@ -1,0 +1,61 @@
+.team-page {
+  text-align: center;
+}
+
+.sean-image {
+  height: 200px;
+  width: 200px;
+  border-style: solid;
+}
+
+.erik-image {
+  height: 200px;
+  width: 200px;
+  border-style: solid;
+}
+
+.frieda-image {
+  height: 200px;
+  width: 200px;
+  border-style: solid;
+}
+
+.meet-the-team {
+  text-align: center;
+
+  font-size: 60px;
+}
+
+.sean-blurb {
+  color: #fffdd0;
+  font-size: 25px;
+  padding: 15px;
+  border-bottom-style: groove;
+}
+
+.erik-blurb {
+  color: #fffdd0;
+  font-size: 25px;
+  padding: 15px;
+  border-bottom-style: groove;
+}
+
+.frieda-blurb {
+  color: #fffdd0;
+  font-size: 25px;
+  padding: 15px;
+  border-bottom-style: groove;
+}
+
+p {
+  font-size: 15px;
+}
+
+#team-button {
+  text-align: center;
+  height: 35px;
+  width: 35px;
+  text-size-adjust: 5px;
+  border-radius: 10%;
+  opacity: 0.5;
+}

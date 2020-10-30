@@ -33,7 +33,7 @@
 }
 
 .sticky-set-done {
- border: none;
+  border: none;
   width: 20px;
   height: 20px;
   background-color: transparent;
@@ -66,10 +66,12 @@
   font-size: 25px;
 }
 
+
 span.font-roboto {
   font-family: "Roboto";
   text-decoration: none;
 }
+
 
 
 
@@ -78,3 +80,4 @@ span.font-roboto {
     width: 220px;
   }
 }
+
