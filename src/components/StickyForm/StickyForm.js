@@ -3,14 +3,15 @@ import React from "react";
 import { motion } from "framer-motion";
 //import Component CSS
 import "./StickyForm.css";
+import DisplayPeople from "../DisplayPeople/DisplayPeople";
 
 // framer motion function for the sticky form
 const stickyFormVariant = {
-  animate: {
-    rotateX: 360,
-    scale: 1.4,
-    x: 190,
-    y: 80,
+  transition: {
+    duration: 20.4,
+    type: "spring",
+    ease: "easeIn",
+    stiffness: 120,
   },
 };
 
@@ -18,8 +19,7 @@ const stickyFormVariant = {
 const createButtonVariant = {
   whileHover: {
     scale: 1.1,
-    textShadow: "0px 0px 8px rgb(255,255,255)",
-    boxShadow: "0px 0px 8px rgb(255,255,255)",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
@@ -29,13 +29,13 @@ const createButtonVariant = {
 };
 
 const StickyForm = (props) => {
-  console.log("sticky form props", props);
   //State for form data
   const [formData, setFormData] = React.useState(props.sticky);
 
   //handleSubmit function to list data to App
   const handleSubmit = (event) => {
     console.log("this is formData: ", formData);
+    /* event.preventDefault() */
     props.handleSubmit(formData);
     props.history.push("/");
   };
@@ -44,69 +44,67 @@ const StickyForm = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   return (
-    <motion.div drag dragElastic={0.2}>
-      <motion.form
-        onSubmit={() => {
-          handleSubmit();
-        }}
-        variants={stickyFormVariant}
-        // animate={{ rotateX: 360, scale: 1.4, x: 195, y: 100 }}
-        animate="animate"
-        transition={{
-          duration: 0.4,
-          ease: `easeOut`,
-        }}
-      >
-        <input
-          type="text"
-          id="form-task"
-          name="task"
-          placeholder="Task Name"
-          value={formData.task}
-          onChange={handleChange}
-        />
-        <br />
+    <motion.form
+      onSubmit={() => {
+        handleSubmit();
+      }}
+      className="stickyForm"
+      variants={stickyFormVariant}
+      initial={{ y: 0 }}
+      animate={{ y: 10 }}
+      transition="transition"
+    >
+      <input
+        type="text"
+        id="form-task"
+        name="task"
+        placeholder="Task Name"
+        value={formData.task}
+        onChange={handleChange}
+      />
 
-        <input
-          type="text"
-          id="form-completeBy"
-          name="completeBy"
-          placeholder="Complete By"
-          value={formData.completeBy}
-          onChange={handleChange}
-        />
-        <br />
+      <input
+        type="text"
+        id="form-completeBy"
+        name="completeBy"
+        placeholder="Complete By"
+        value={formData.completeBy}
+        onChange={handleChange}
+      />
 
-        <input
-          type="text"
-          id="form-workspace"
-          name="workSpace"
-          placeholder="Task Location"
-          value={formData.workSpace}
-          onChange={handleChange}
-        />
-        <br />
+      <input
+        type="text"
+        id="form-workspace"
+        name="workSpace"
+        placeholder="Task Location"
+        value={formData.workSpace}
+        onChange={handleChange}
+      />
 
-        <input
-          type="text"
-          id="form-description"
-          name="description"
-          placeholder="Task Description"
-          value={formData.description}
-          onChange={handleChange}
-        />
-        <br />
-        <motion.input
-          id="createButton"
-          type="submit"
-          value={props.label}
-          variants={createButtonVariant}
-          whileHover="whileHover"
-          whileTap="whileTap"
-        />
-        {/* <input type="submit" value={props.label} /> */}
-      </motion.form>
-    </motion.div>
+      <input
+        type="text"
+        id="form-description"
+        name="description"
+        placeholder="Task Description"
+        value={formData.description}
+        onChange={handleChange}
+      />
+
+      <DisplayPeople
+        url={props.url}
+        setFormData={setFormData}
+        formData={formData}
+      />
+
+      <motion.input
+        id="createButton"
+        type="submit"
+        value="Add Sticky"
+        variants={createButtonVariant}
+        whileHover="whileHover"
+        whileTap="whileTap"
+      />
+    </motion.form>
   );
 };
 

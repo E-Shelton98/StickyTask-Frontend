@@ -10,13 +10,16 @@ import Whiteboard from "./components/Whiteboard/Whiteboard";
 function App() {
   return (
     <div className="App">
-      <motion.h1
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1.5, type: `spring`, stiffness: 120 }}
-      >
-        <h1 className='heading'>Sticky Task</h1>
-      </motion.h1>
+      
+        <motion.h1
+          className="heading"
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 1.5, type: `spring`, stiffness: 120 }}
+        >
+          Sticky Task
+        </motion.h1>
+      
       <Whiteboard />
     </div>
   );

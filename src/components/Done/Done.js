@@ -9,8 +9,7 @@ import "./Done.css";
 const notDoneButtonVariant = {
   whileHover: {
     scale: 1.1,
-    textShadow: "0px 0px 8px rgb(255,255,255)",
-    boxShadow: "0px 0px 8px rgb(255,255,255)",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
@@ -22,8 +21,7 @@ const notDoneButtonVariant = {
 const deleteButtonVariant = {
   whileHover: {
     scale: 1.3,
-    textShadow: "0px 0px 8px #ff0000",
-    boxShadow: "0px 0px 8px #ff0000",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
@@ -45,9 +43,10 @@ const Done = (props) => {
               animate={{ y: 0 }}
               transition={{ type: `spring`, stiffness: 120, duration: 0.1 }}
               className="sticky"
+              key={sticky._id}
             >
               <section className="sticky-name">
-                Name: <span className="font-roboto">{sticky.task}</span>
+                Task: <span className="font-roboto">{sticky.task}</span>
               </section>
               <section className="sticky-complete-by">
                 Complete By:{" "}
@@ -89,7 +88,7 @@ const Done = (props) => {
               </div>
             </motion.div>
           ))}
-          <i class="far fa-trash-alt" onClick={props.deleteAllStickies}></i>
+          <i className="far fa-trash-alt" onClick={props.deleteAllStickies}></i>
         </div>
       ) : (
         <h3>No Completed Tasks Yet!</h3>
