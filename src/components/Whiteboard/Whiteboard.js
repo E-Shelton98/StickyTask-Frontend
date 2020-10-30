@@ -282,42 +282,8 @@ const Whiteboard = (props) => {
           <TabPane tabId="2">
             <Row>
               <Col sm="6">
-              <div className='done-stickies'>
-                <Route
-                  exact
-                  path="/"
-                  render={(rp) => (
-                    <Done
-                      {...rp}
-                      stickies={stickiesDone}
-                      setUnDone={setUnDone}
-                      deleteSticky={deleteSticky}
-                      deleteAllStickies={deleteAllStickies}
-                    />
-                  )}
-                />
-                </div>
-              </Col>
-            </Row>
-          </TabPane>
-        </TabContent>
-      </div>
-      <div className='desktop-view'>
-        <Route
-                    exact
-                    path="/"
-                    render={(rp) => (
-                      <DisplaySticky
-                        {...rp}
-                        stickies={stickiesToDo}
-                        setDone={setDone}
-                        deleteSticky={deleteSticky}
-                        selectSticky={selectSticky}
-                      />
-                    )}
-                  />
-                  <div className='done-stickies'>
-        <Route
+                <div className="done-stickies">
+                  <Route
                     exact
                     path="/"
                     render={(rp) => (
@@ -330,7 +296,43 @@ const Whiteboard = (props) => {
                       />
                     )}
                   />
-                  </div>
+                </div>
+              </Col>
+            </Row>
+          </TabPane>
+        </TabContent>
+      </div>
+      <div className="desktop-view">
+        <h2>To-Do</h2>
+        <Route
+          exact
+          path="/"
+          render={(rp) => (
+            <DisplaySticky
+              {...rp}
+              stickies={stickiesToDo}
+              setDone={setDone}
+              deleteSticky={deleteSticky}
+              selectSticky={selectSticky}
+            />
+          )}
+        />
+        <div className="done-stickies-dt">
+        <h2>Done</h2>
+          <Route
+            exact
+            path="/"
+            render={(rp) => (
+              <Done
+                {...rp}
+                stickies={stickiesDone}
+                setUnDone={setUnDone}
+                deleteSticky={deleteSticky}
+                deleteAllStickies={deleteAllStickies}
+              />
+            )}
+          />
+        </div>
       </div>
     </div>
   );

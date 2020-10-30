@@ -9,10 +9,15 @@
   .not-done-button {
 	border: none;
     border-radius: 30px;
-    width: 120px;
+    width: 80px;
     height: 30px;
     background-color: #1400ab;
     color: white;
     font-family: 'Roboto';
     font-weight: 400;
+  }
+
+  #delete-all {
+	  display: block;
+	  font-size: 20px;
   }

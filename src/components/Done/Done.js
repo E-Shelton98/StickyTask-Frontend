@@ -37,7 +37,7 @@ const Done = (props) => {
     <>
       {stickies && stickies.length > 0 ? (
         <div id="sticky-display">
-          <i className="far fa-trash-alt" onClick={props.deleteAllStickies}></i>
+          <i className="far fa-trash-alt" id='delete-all' onClick={props.deleteAllStickies}></i>
           {stickies.map((sticky) => (
             <motion.div
               initial={{ y: 100 }}
