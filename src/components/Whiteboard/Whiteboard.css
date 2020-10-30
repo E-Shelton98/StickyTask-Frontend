@@ -4,8 +4,7 @@ div.Whiteboard-Div {
   padding-top: 3%;
   z-index: 0;
 
-  height: 100vh;
-
+  /* height: 70vh; */
 }
 
 hr {
@@ -96,9 +95,7 @@ hr {
     flex-direction: column;
   }
 
-
-.team-image {
-  width: 5px;
-
-}
+  .team-image {
+    width: 5px;
+  }
 }
