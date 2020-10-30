@@ -21,8 +21,8 @@ function App() {
       >
         Sticky Task
       </motion.h1>
-
-      <Whiteboard />
+      <Route exact path="/"> <Whiteboard /></Route>
+     
       <div className="team-page">
         <Link to="/teampage">
           <motion.img
