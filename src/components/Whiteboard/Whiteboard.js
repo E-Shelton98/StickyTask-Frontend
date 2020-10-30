@@ -300,6 +300,34 @@ const Whiteboard = (props) => {
           </TabPane>
         </TabContent>
       </div>
+      <div className='desktop-view'>
+        <Route
+                    exact
+                    path="/"
+                    render={(rp) => (
+                      <DisplaySticky
+                        {...rp}
+                        stickies={stickiesToDo}
+                        setDone={setDone}
+                        deleteSticky={deleteSticky}
+                        selectSticky={selectSticky}
+                      />
+                    )}
+                  />
+        <Route
+                    exact
+                    path="/"
+                    render={(rp) => (
+                      <Done
+                        {...rp}
+                        stickies={stickiesDone}
+                        setUnDone={setUnDone}
+                        deleteSticky={deleteSticky}
+                        deleteAllStickies={deleteAllStickies}
+                      />
+                    )}
+                  />
+      </div>
     </div>
   );
 };

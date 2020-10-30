@@ -20,7 +20,7 @@
   margin: 5px;
   padding: 5px;
   line-height: 100%;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .sticky-task {
