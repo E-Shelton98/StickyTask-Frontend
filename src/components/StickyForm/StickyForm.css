@@ -9,7 +9,7 @@
     justify-content: space-between;
     flex-direction: column;
     height: 250px;
-    background-color:red;
+    /* background-color:red; */
     align-items: center;
 }
 
@@ -26,4 +26,9 @@
 
 option {
     font-family: 'Roboto'
+}
+input {
+    border-radius: 2px;
+    border: 1px solid grey;
+    padding-left: 4px;
 }

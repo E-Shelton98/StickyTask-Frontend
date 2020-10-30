@@ -62,13 +62,13 @@ hr {
     padding: 2%;
 }
 
-.createForm form{
+.stickyForm {
     position:fixed;
     z-index:2;
 }
 .createPerson {
     z-index:1;
-    position: relative;
+    /* position: relative; */
     padding: 2%;
 }
 .tabs {

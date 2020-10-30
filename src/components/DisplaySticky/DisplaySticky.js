@@ -57,61 +57,68 @@ const DisplaySticky = (props) => {
               drag
               dragConstraints={{ left: 0, top: 0, right: 0, bottom: 300 }}
               dragElastic={0.2}
-			  dragMomentum={true}
-			  key={sticky._id}
+              dragMomentum={true}
+              key={sticky._id}
             >
-              <section className="sticky-name">
-                Task: <span className="font-roboto">{sticky.task}</span>
-              </section>
-              <section className="sticky-complete-by">
-                Complete By: <br />
-                <span className="font-roboto">{sticky.completeBy}</span>
+              <div className="buttons-row">
+                <motion.button
+                  className="sticky-set-done"
+                  variants={doneButtonVariant}
+                  whileHover="whileHover"
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    props.setDone(sticky);
+                    props.history.push("/");
+                  }}
+
+                >
+                  <i className="fas fa-check"></i>
+                </motion.button>
+                <motion.button
+                  className="edit-sticky-button"
+                  variants={editButtonVariant}
+                  whileHover="whileHover"
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    props.selectSticky(sticky);
+                    props.history.push("/edit");
+                    console.log(`edit button`, props.handleUpdate);
+                  }}
+                >
+                  <i className="fas fa-pencil-alt"></i>
+                </motion.button>
+
+                <motion.section
+                  className="sticky-delete"
+                  variants={deleteButtonVariant}
+                  whileHover="whileHover"
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    props.deleteSticky(sticky);
+                    props.history.push("/");
+                  }}
+                >
+                  <i className="far fa-trash-alt"></i>
+                </motion.section>
+
+              </div>
+              <section className="sticky-task">{sticky.task}</section>
+              <section className="sticky-assignTo">
+                Assigned to:{" "}
+                <span className="font-roboto">{sticky.assignTo}</span>
               </section>
               <section className="sticky-workSpace">
                 Work Space:{" "}
                 <span className="font-roboto">{sticky.workSpace}</span>
               </section>
+              <section className="sticky-complete-by">
+                Complete By: {" "}
+                <span className="font-roboto">{sticky.completeBy}</span>
+              </section>
               <section className="sticky-description">
                 Description:{" "}
                 <span className="font-roboto">{sticky.description}</span>
               </section>
-              <motion.button
-                className="sticky-set-done"
-                variants={doneButtonVariant}
-                whileHover="whileHover"
-                whileTap={{ scale: 0.9 }}
-                onClick={() => {
-                  props.setDone(sticky);
-                  props.history.push("/");
-                }}
-              >
-                <span className="font-roboto">Done</span>
-              </motion.button>
-              <motion.button
-                className="edit-sticky-button"
-                variants={editButtonVariant}
-                whileHover="whileHover"
-                whileTap={{ scale: 0.9 }}
-                onClick={() => {
-                  props.selectSticky(sticky);
-                  props.history.push("/edit");
-                  console.log(`edit button`, props.handleUpdate);
-                }}
-              >
-                <span className="font-roboto">Edit</span>
-              </motion.button>
-              <div className="sticky-delete-and-add-person-container">
-                <motion.section
-                  variants={deleteButtonVariant}
-                  whileHover="whileHover"
-                  whileTap={{ scale: 0.9 }}
-                  className="far fa-trash-alt"
-                  onClick={() => {
-                    props.deleteSticky(sticky);
-                    props.history.push("/");
-                  }}
-                ></motion.section>
-              </div>
             </motion.div>
           ))}
         </div>
