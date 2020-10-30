@@ -9,10 +9,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 .heading {
   text-align: center;
   position: relative;
@@ -24,9 +20,6 @@
 .App {
   position: relative;
   height: 100vh;
-
-
-  height: 100%;
 
   width: 100%;
 
@@ -53,5 +46,3 @@
   cursor: grab;
   text-align: right;
 }
-
-
