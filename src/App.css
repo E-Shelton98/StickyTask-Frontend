@@ -38,10 +38,8 @@
 }
 
 .team-button {
-  background-color: red;
-  color: cyan;
   cursor: grab;
-  text-align: center;
+  text-align: left;
 }
 
 .App::before {

@@ -13,7 +13,7 @@ const TeamPage = (props) => {
         alt=""
       ></img>
       <p className="sean-blurb">
-        Worked along with the magnificent minds of Frieda and Erik
+        Worked along side the magnificent minds of Frieda and Erik
         <br /> to create a task manager app called Sticky Task.
       </p>
       <h3>Erik</h3>

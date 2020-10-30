@@ -3,8 +3,8 @@
 }
 
 .sean-image {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
 }
 
 .meet-the-team {
@@ -15,4 +15,9 @@
 
 .sean-blurb {
   font-size: 15px;
+}
+
+.team-button {
+  background-color: red;
+  width: 30px;
 }

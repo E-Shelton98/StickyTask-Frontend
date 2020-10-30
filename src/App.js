@@ -25,7 +25,14 @@ function App() {
       <Whiteboard />
       <div className="team-page">
         <Link to="/teampage">
-          <button id="team-button">Meet The Team</button>
+          <motion.button
+            id="team-button"
+            whileHover={{ scale: 0.9 }}
+            transition={{ yoyo: Infinity, duration: 0.4 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Meet The Team
+          </motion.button>
         </Link>
 
         <Route exact path="/teampage" render={(rp) => <TeamPage {...rp} />} />
