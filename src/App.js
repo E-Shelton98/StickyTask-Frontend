@@ -26,7 +26,7 @@ function App() {
         </motion.h1>
       </Link>
 
-     <Route exact path="/"> <Whiteboard /></Route>
+      <Whiteboard />
 
       <div className="team-page">
         <Link to="/teampage">
