@@ -1,19 +1,63 @@
-.sticky-not-done {
-	border: none;
-	box-shadow: 0px 1px 3px;
-	border-radius: 30px;
-	width: 90px;
-	height: 40px;
-	background-color: #f2de78;
-	grid-column: 4;
-	grid-row: 1;
-	margin: 5px;
+.done-stickies #sticky-display {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.done-buttons-row {
+  grid-area: 1/1/1/2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
-.delete-container {
-	grid-column: 4;
-	grid-row: 3;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+.not-done-button {
+  border: none;
+  border-radius: 30px;
+  width: 50px;
+  height: 30px;
+  background-color: #1400ab;
+  color: white;
+  font-family: "Roboto";
+  font-weight: 400;
+}
+
+#delete-all {
+  display: block;
+  font-size: 20px;
+}
+
+.done-stickies-dt {
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: 40px auto;
+  box-sizing: content-box;
+}
+
+.done-top-row {
+  grid-area: 1/1/1/2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* padding-right:  */
+}
+
+
+
+.done-stickies-dt #sticky-display .sticky {
+  height: 120px;
+  width: 120px;
+}
+
+@media screen and (min-width: 1024px) {
+  .hide-info {
+    display: none;
+  }
+
+  .done-stickies-dt .sticky {
+	  display: grid;
+	  grid-template-rows: 1fr 3fr;
+  }
+
+
 }
