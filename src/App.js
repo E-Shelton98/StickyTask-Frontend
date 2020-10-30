@@ -13,7 +13,6 @@ import TeamPage from "./components/TeamPage/TeamPage";
 function App() {
   return (
     <div className="App">
-
       <Link to="/">
         <motion.h1
           className="heading"

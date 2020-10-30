@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* position: absolute */
+  /* position: absolute; */
 }
 
 .sticky {
@@ -25,7 +25,7 @@
 }
 
 .col-sm-12 {
-  padding: 0
+  padding: 0;
 }
 
 .sticky-task {
@@ -66,18 +66,13 @@
   font-size: 25px;
 }
 
-
 span.font-roboto {
   font-family: "Roboto";
   text-decoration: none;
 }
-
-
-
 
 @media screen and (min-width: 768px) {
   .sticky {
     width: 220px;
   }
 }
-
