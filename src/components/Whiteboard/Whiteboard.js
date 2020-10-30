@@ -235,7 +235,8 @@ const Whiteboard = (props) => {
             {...rp}
             label="Update"
             sticky={selectedSticky}
-            handleSubmit={handleUpdate}
+			handleSubmit={handleUpdate}
+			url={url}
           />
         )}
       />
