@@ -287,6 +287,7 @@ const Whiteboard = (props) => {
             <Row>
               <Col sm="6">
                 <div className="done-stickies">
+                <i className="far fa-trash-alt" id='delete-all' onClick={props.deleteAllStickies}></i>
                   <Route
                     exact
                     path="/"
