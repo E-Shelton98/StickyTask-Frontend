@@ -39,7 +39,14 @@ const TeamPage = (props) => {
         src="https://i.imgur.com/wYAXjm8t.jpg"
         alt=""
       ></motion.img>
-      <p className="erik-blurb"></p>
+      <p className="erik-blurb">
+        As a passionate problem solver I thrive on solving bugs and helping out
+        my team members, I also have a passion for functional thinking and
+        difficult processes involving data. <br />
+        I'd rather come across a challenge and feel excited about solving it
+        than everything be easy. My contribution to the project was helping
+        guide things along and helping whenever needed.{" "}
+      </p>
       <h3>Frieda</h3>
       <motion.img
         initial={{ x: 2000 }}
