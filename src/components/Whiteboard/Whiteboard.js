@@ -282,6 +282,7 @@ const Whiteboard = (props) => {
           <TabPane tabId="2">
             <Row>
               <Col sm="6">
+              <div className='done-stickies'>
                 <Route
                   exact
                   path="/"
@@ -295,6 +296,7 @@ const Whiteboard = (props) => {
                     />
                   )}
                 />
+                </div>
               </Col>
             </Row>
           </TabPane>
@@ -314,6 +316,7 @@ const Whiteboard = (props) => {
                       />
                     )}
                   />
+                  <div className='done-stickies'>
         <Route
                     exact
                     path="/"
@@ -327,6 +330,7 @@ const Whiteboard = (props) => {
                       />
                     )}
                   />
+                  </div>
       </div>
     </div>
   );

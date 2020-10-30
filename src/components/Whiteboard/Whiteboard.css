@@ -1,78 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 
 div.Whiteboard-Div {
-    padding-top: 3%;
-    z-index: 0;
+  padding-top: 3%;
+  z-index: 0;
 }
 
 hr {
-    text-align: center;
-    border: none;
-    height: 3px;
-    background: black;
-    margin-top: 0px;
-    margin-right: 10px;
-    margin-bottom: 0px;
-    margin-left: 10px;
+  text-align: center;
+  border: none;
+  height: 3px;
+  background: black;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  margin-left: 10px;
 }
 
 #add-buttons {
-    display: flex;
-    justify-content: space-around;
-    font-family: 'Roboto'
-    
+  display: flex;
+  justify-content: space-around;
+  font-family: "Roboto";
 }
 
 .add-sticky {
-    border: none;
-    border-radius: 30px;
-    border-color: white;
-    width: 120px;
-    height: 30px;
-    background-color: #1400ab;
-    color: white;
-    font-family: 'Roboto';
-    font-weight: 400;
+  border: none;
+  border-radius: 30px;
+  border-color: white;
+  width: 120px;
+  height: 30px;
+  background-color: #1400ab;
+  color: white;
+  font-family: "Roboto";
+  font-weight: 400;
 }
 
 .add-person {
-    border: none;
-    border-radius: 30px;
-    width: 120px;
-    height: 30px;
-    background-color: #1400ab;
-    color: white;
-    font-family: 'Roboto'
+  border: none;
+  border-radius: 30px;
+  width: 120px;
+  height: 30px;
+  background-color: #1400ab;
+  color: white;
+  font-family: "Roboto";
 }
 
 .outsideClick {
-    height: 100vh;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    z-index: 1;
-    background-color: rgb(255,255,255, 0.7);
-
+  height: 100vh;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+  background-color: rgb(255, 255, 255, 0.7);
 }
 
 .createForm {
-    z-index: 2;
-    padding: 2%;
+  z-index: 2;
+  padding: 2%;
 }
 
 .stickyForm {
-    position:fixed;
-    z-index:2;
+  position: fixed;
+  z-index: 2;
 }
 .createPerson {
-    z-index:1;
-    /* position: relative; */
-    padding: 2%;
+  z-index: 1;
+  /* position: relative; */
+  padding: 2%;
 }
 .tabs {
-    position: relative;
+  position: relative;
+}
+.desktop-view {
+  display: none;
 }
 
-/* @media only screen(min-width: 1024px;) */
+@media screen and (min-width: 1024px) {
+  .tabs {
+    display: none;
+  }
+  .desktop-view {
+    display: flex;
+    flex-direction: row;
+  }
+}
