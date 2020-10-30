@@ -28,6 +28,7 @@ const Whiteboard = (props) => {
 
   // State to hold Sticky List
   const [stickies, setStickies] = useState([]);
+  const [people, setPeople] = useState([])
 
   const stickiesToFilter = stickies.data;
   let stickiesToDo = [];
@@ -69,7 +70,7 @@ const Whiteboard = (props) => {
   const getPeople = () => {
     fetch(url + "/person/")
       .then((res) => res.json())
-      .then((data) => setStickies(data));
+	  .then((data) => setPeople(data))
   };
 
   //handleCreate Function for creating stickies in DisplayStickies
@@ -96,7 +97,8 @@ const Whiteboard = (props) => {
 
   //Get stickies on page load
   React.useEffect(() => {
-    getStickies();
+	getStickies();
+	getPeople();
   }, []);
 
   //setUnDone function for setting a sticky back to to-do status
@@ -272,7 +274,8 @@ const Whiteboard = (props) => {
                       stickies={stickiesToDo}
                       setDone={setDone}
                       deleteSticky={deleteSticky}
-                      selectSticky={selectSticky}
+					  selectSticky={selectSticky}
+					  people={people}
                     />
                   )}
                 />
