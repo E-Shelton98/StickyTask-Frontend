@@ -99,7 +99,7 @@ const StickyForm = (props) => {
       <motion.input
         id="createButton"
         type="submit"
-        value="Add Sticky"
+        value={props.label}
         variants={createButtonVariant}
         whileHover="whileHover"
         whileTap="whileTap"
