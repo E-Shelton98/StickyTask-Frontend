@@ -25,7 +25,9 @@
   position: relative;
   height: 100vh;
 
+
   height: 100%;
+
   width: 100%;
 
   background-image: url("https://res.cloudinary.com/dtsnkndle/image/upload/v1604003550/PnpV3fIrhbL4jYQgwSHz7zWuPC7gBdhvfx1-8hxzS0g_mhx7jo.jpg");
@@ -52,14 +54,4 @@
   text-align: right;
 }
 
-.App::before {
-  content: "";
-  /* position: absolute; */
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 100vh;
-  height: 100%;
-}
+

@@ -77,6 +77,11 @@ hr {
   position: relative;
 }
 
+.done-stickies #delete-all {
+    text-align: right;
+    margin: 10px 0 5px 0;
+}
+
 .desktop-view {
   display: none;
 }
