@@ -62,8 +62,8 @@ const PersonForm = (props) => {
     <motion.form
       className="personForm"
       variants={personFormVariant}
-      initial={{ y: 0 }}
-      animate={{ y: 10 }}
+      initial={{ y: 0, x: -105 }}
+      animate={{ y: 10, x: -105 }}
       transition="transition"
       onSubmit={() => {
         handleSubmit();
