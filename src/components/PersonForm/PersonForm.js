@@ -4,7 +4,12 @@ import "./PersonForm.css";
 
 // framer motion function for the person form
 const personFormVariant = {
-  animate: {},
+  transition: {
+    duration: 20.4,
+    type: "spring",
+    ease: "easeIn",
+    stiffness: 120,
+  },
 };
 
 // create framer motion variable for animating the add tasker button
@@ -55,11 +60,13 @@ const PersonForm = (props) => {
 
   return (
     <motion.form
-      className='personForm'
+      className="personForm"
       variants={personFormVariant}
+
       animate="animate"
       transition={{duration: 0.4,
         ease: `easeOut`,}}
+
       onSubmit={() => {
         handleSubmit();
       }}

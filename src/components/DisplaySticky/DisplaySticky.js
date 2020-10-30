@@ -40,18 +40,6 @@ const deleteButtonVariant = {
   },
 };
 
-// create framer motion variable for animating the add person button
-const addPersonButtonVariant = {
-  whileHover: {
-    scale: 1.1,
-
-    transition: {
-      yoyo: Infinity,
-      duration: 0.4,
-    },
-  },
-};
-
 //Create DisplaySticky Component
 const DisplaySticky = (props) => {
   let stickies = props.stickies;
@@ -82,6 +70,7 @@ const DisplaySticky = (props) => {
                     props.setDone(sticky);
                     props.history.push("/");
                   }}
+
                 >
                   <i className="fas fa-check"></i>
                 </motion.button>
@@ -111,6 +100,7 @@ const DisplaySticky = (props) => {
                 >
                   <i className="far fa-trash-alt"></i>
                 </motion.section>
+
               </div>
               <section className="sticky-task">{sticky.task}</section>
               <section className="sticky-assignTo">
