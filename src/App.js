@@ -10,7 +10,7 @@ import Whiteboard from "./components/Whiteboard/Whiteboard";
 function App() {
   return (
     <div className="App">
-      <h1>
+      
         <motion.h1
           className="heading"
           initial={{ y: -100 }}
@@ -19,7 +19,7 @@ function App() {
         >
           Sticky Task
         </motion.h1>
-      </h1>
+      
       <Whiteboard />
     </div>
   );

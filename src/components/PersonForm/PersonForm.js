@@ -58,7 +58,8 @@ const PersonForm = (props) => {
       className='personForm'
       variants={personFormVariant}
       animate="animate"
-      transition={{}}
+      transition={{duration: 0.4,
+        ease: `easeOut`,}}
       onSubmit={() => {
         handleSubmit();
       }}
