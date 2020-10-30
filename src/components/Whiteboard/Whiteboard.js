@@ -145,7 +145,7 @@ const Whiteboard = (props) => {
       },
     }).then(() => {
       getStickies();
-    });
+    }, []);
   };
 
   const deleteAllStickies = (sticky) => {
@@ -163,189 +163,191 @@ const Whiteboard = (props) => {
   const [dropDownPerson, setDropDownPerson] = useState(false);
 
   return (
-    <div className="Whiteboard-Div">
-      <hr />
-      <div id="add-buttons">
-        <div className="createForm">
-          {dropDown === false ? (
-            <button
-              className="add-sticky"
-              onClick={() => {
-                setDropDown(true);
-              }}
-            >
-              Sticky Task +
-            </button>
-          ) : (
-            <Route
-              exact
-              path="/"
-              render={(rp) => (
-                <StickyForm
-                  {...rp}
-                  label="Add Sticky"
-                  sticky={emptySticky}
-                  setDropDown={setDropDown}
-                  handleSubmit={handleCreate}
-                  url={url}
-                />
-              )}
-            />
-          )}
-        </div>
+		<div className='Whiteboard-Div'>
+			<hr />
+			<div id='add-buttons'>
+				<div className='createForm'>
+					{dropDown === false ? (
+						<button
+							className='add-sticky'
+							onClick={() => {
+								setDropDown(true);
+							}}>
+							Sticky Task +
+						</button>
+					) : (
+						<Route
+							exact
+							path='/'
+							render={(rp) => (
+								<StickyForm
+									{...rp}
+									label='Add Sticky'
+									sticky={emptySticky}
+									setDropDown={setDropDown}
+									handleSubmit={handleCreate}
+									url={url}
+								/>
+							)}
+						/>
+					)}
+				</div>
 
-        {dropDown === true || dropDownPerson === true ? (
-          <div
-            className="outsideClick"
-            onClick={() => {
-              setDropDown(false);
-              setDropDownPerson(false);
-            }}
-          ></div>
-        ) : null}
+				{dropDown === true || dropDownPerson === true ? (
+					<div
+						className='outsideClick'
+						onClick={() => {
+							setDropDown(false);
+							setDropDownPerson(false);
+						}}></div>
+				) : null}
 
-        <div className="createPerson">
-          {dropDownPerson === false ? (
-            <button
-              className="add-person"
-              onClick={() => {
-                setDropDownPerson(true);
-              }}
-            >
-              Tasker +
-            </button>
-          ) : (
-            <Route
-              exact
-              path="/"
-              render={(rp) => (
-                <PersonForm {...rp} url={url} getPeople={getPeople} />
-              )}
-            />
-          )}
-        </div>
-      </div>
-      <hr />
+				<div className='createPerson'>
+					{dropDownPerson === false ? (
+						<button
+							className='add-person'
+							onClick={() => {
+								setDropDownPerson(true);
+							}}>
+							Tasker +
+						</button>
+					) : (
+						<Route
+							exact
+							path='/'
+							render={(rp) => (
+								<PersonForm {...rp} url={url} getPeople={getPeople} />
+							)}
+						/>
+					)}
+				</div>
+			</div>
+			<hr />
 
-      <Route
-        exact
-        path="/edit"
-        render={(rp) => (
-          <StickyForm
-            {...rp}
-            label="Update"
-            sticky={selectedSticky}
-			handleSubmit={handleUpdate}
-			url={url}
-          />
-        )}
-      />
-      <div className="tabs">
-        <Nav tabs>
-          <NavItem>
-            <NavLink
-              className={classnames({ active: activeTab === "1" })}
-              onClick={() => {
-                toggle("1");
-              }}
-            >
-              To-Do
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              className={classnames({ active: activeTab === "2" })}
-              onClick={() => {
-                toggle("2");
-              }}
-            >
-              Done
-            </NavLink>
-          </NavItem>
-        </Nav>
-        <TabContent activeTab={activeTab}>
-          <TabPane tabId="1">
-            <Row>
-              <Col sm="12">
-                <Route
-                  exact
-                  path="/"
-                  render={(rp) => (
-                    <DisplaySticky
-                      {...rp}
-                      stickies={stickiesToDo}
-                      setDone={setDone}
-                      deleteSticky={deleteSticky}
-                      selectSticky={selectSticky}
-                      people={people}
-                    />
-                  )}
-                />
-              </Col>
-            </Row>
-          </TabPane>
-          <TabPane tabId="2">
-            <Row>
-              <Col sm="6">
-                <div className="done-stickies">
-                  <Route
-                    exact
-                    path="/"
-                    render={(rp) => (
-                      <Done
-                        {...rp}
-                        stickies={stickiesDone}
-                        setUnDone={setUnDone}
-                        deleteSticky={deleteSticky}
-                        deleteAllStickies={deleteAllStickies}
-                      />
-                    )}
-                  />
-                </div>
-              </Col>
-            </Row>
-          </TabPane>
-        </TabContent>
-      </div>
-      <div className="desktop-view">
-        <h2>To-Do</h2>
-        {<Route
-          exact
-          path="/"
-          render={(rp) => (
-            <DisplaySticky
-              {...rp}
-              stickies={stickiesToDo}
-              setDone={setDone}
-              deleteSticky={deleteSticky}
-			  selectSticky={selectSticky}
-			  people={people}
-            />
-          )}
-        />}
-        <div className="done-stickies-dt">
-          <div className="done-top-row">
-             <h2>Done</h2>
-        <i className="far fa-trash-alt" id='delete-all' onClick={props.deleteAllStickies}></i>
-          </div>
-       
-          <Route
-            exact
-            path="/"
-            render={(rp) => (
-              <Done
-                {...rp}
-                stickies={stickiesDone}
-                setUnDone={setUnDone}
-                deleteSticky={deleteSticky}
-                deleteAllStickies={deleteAllStickies}
-              />
-            )}
-          />
-        </div>
-      </div>
-    </div>
-  );
+			<Route
+				exact
+				path='/edit'
+				render={(rp) => (
+					<StickyForm
+						{...rp}
+						label='Update'
+						sticky={selectedSticky}
+						handleSubmit={handleUpdate}
+						url={url}
+					/>
+				)}
+			/>
+			<div className='tabs'>
+				<Nav tabs>
+					<NavItem>
+						<NavLink
+							className={classnames({ active: activeTab === '1' })}
+							onClick={() => {
+								toggle('1');
+							}}>
+							To-Do
+						</NavLink>
+					</NavItem>
+					<NavItem>
+						<NavLink
+							className={classnames({ active: activeTab === '2' })}
+							onClick={() => {
+								toggle('2');
+							}}>
+							Done
+						</NavLink>
+					</NavItem>
+				</Nav>
+				<TabContent activeTab={activeTab}>
+					<TabPane tabId='1'>
+						<Row>
+							<Col sm='12'>
+								<Route
+									exact
+									path='/'
+									render={(rp) => (
+										<DisplaySticky
+											{...rp}
+											stickies={stickiesToDo}
+											setDone={setDone}
+											deleteSticky={deleteSticky}
+											selectSticky={selectSticky}
+											people={people}
+										/>
+									)}
+								/>
+							</Col>
+						</Row>
+					</TabPane>
+					<TabPane tabId='2'>
+						<Row>
+							<Col sm='6'>
+								<div className='done-stickies'>
+									<Route
+										exact
+										path='/'
+										render={(rp) => (
+											<Done
+												{...rp}
+												stickies={stickiesDone}
+												setUnDone={setUnDone}
+												deleteSticky={deleteSticky}
+												deleteAllStickies={deleteAllStickies}
+												people={people}
+											/>
+										)}
+									/>
+								</div>
+							</Col>
+						</Row>
+					</TabPane>
+				</TabContent>
+			</div>
+			<div className='desktop-view'>
+				<h2>To-Do</h2>
+				{
+					<Route
+						exact
+						path='/'
+						render={(rp) => (
+							<DisplaySticky
+								{...rp}
+								stickies={stickiesToDo}
+								setDone={setDone}
+								deleteSticky={deleteSticky}
+								selectSticky={selectSticky}
+								people={people}
+							/>
+						)}
+					/>
+				}
+				<div className='done-stickies-dt'>
+					<div className='done-top-row'>
+						<h2>Done</h2>
+						<i
+							className='far fa-trash-alt'
+							id='delete-all'
+							onClick={props.deleteAllStickies}></i>
+					</div>
+
+					<Route
+						exact
+						path='/'
+						render={(rp) => (
+							<Done
+								{...rp}
+								stickies={stickiesDone}
+								setUnDone={setUnDone}
+								deleteSticky={deleteSticky}
+								deleteAllStickies={deleteAllStickies}
+								people={people}
+							/>
+						)}
+					/>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Whiteboard;
