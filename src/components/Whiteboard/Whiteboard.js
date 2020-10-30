@@ -286,23 +286,61 @@ const Whiteboard = (props) => {
           <TabPane tabId="2">
             <Row>
               <Col sm="6">
-                <Route
-                  exact
-                  path="/"
-                  render={(rp) => (
-                    <Done
-                      {...rp}
-                      stickies={stickiesDone}
-                      setUnDone={setUnDone}
-                      deleteSticky={deleteSticky}
-                      deleteAllStickies={deleteAllStickies}
-                    />
-                  )}
-                />
+                <div className="done-stickies">
+                  <Route
+                    exact
+                    path="/"
+                    render={(rp) => (
+                      <Done
+                        {...rp}
+                        stickies={stickiesDone}
+                        setUnDone={setUnDone}
+                        deleteSticky={deleteSticky}
+                        deleteAllStickies={deleteAllStickies}
+                      />
+                    )}
+                  />
+                </div>
               </Col>
             </Row>
           </TabPane>
         </TabContent>
+      </div>
+      <div className="desktop-view">
+        <h2>To-Do</h2>
+        <Route
+          exact
+          path="/"
+          render={(rp) => (
+            <DisplaySticky
+              {...rp}
+              stickies={stickiesToDo}
+              setDone={setDone}
+              deleteSticky={deleteSticky}
+              selectSticky={selectSticky}
+            />
+          )}
+        />
+        <div className="done-stickies-dt">
+          <div className="done-top-row">
+             <h2>Done</h2>
+        <i className="far fa-trash-alt" id='delete-all' onClick={props.deleteAllStickies}></i>
+          </div>
+       
+          <Route
+            exact
+            path="/"
+            render={(rp) => (
+              <Done
+                {...rp}
+                stickies={stickiesDone}
+                setUnDone={setUnDone}
+                deleteSticky={deleteSticky}
+                deleteAllStickies={deleteAllStickies}
+              />
+            )}
+          />
+        </div>
       </div>
     </div>
   );
