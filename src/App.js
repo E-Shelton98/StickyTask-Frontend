@@ -13,7 +13,6 @@ import TeamPage from "./components/TeamPage/TeamPage";
 function App() {
   return (
     <div className="App">
-
       <Link to="/">
         <motion.h1
           className="heading"
@@ -26,7 +25,7 @@ function App() {
         </motion.h1>
       </Link>
 
-     <Route exact path="/"> <Whiteboard /></Route>
+      <Whiteboard />
 
       <div className="team-page">
         <Link to="/teampage">
