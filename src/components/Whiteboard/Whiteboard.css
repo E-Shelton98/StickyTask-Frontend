@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
 div.Whiteboard-Div {
     padding-top: 3%;
     z-index: 0;
@@ -17,29 +19,35 @@ hr {
 #add-buttons {
     display: flex;
     justify-content: space-around;
+    font-family: 'Roboto'
+    
 }
 
 .add-sticky {
     border: none;
     border-radius: 30px;
     border-color: white;
-    width: 110px;
-    height: 40px;
+    width: 120px;
+    height: 30px;
     background-color: #1400ab;
     color: white;
+    font-family: 'Roboto';
+    font-weight: 400;
 }
 
 .add-person {
     border: none;
     border-radius: 30px;
-    width: 110px;
-    height: 40px;
+    width: 120px;
+    height: 30px;
     background-color: #1400ab;
     color: white;
+    font-family: 'Roboto'
 }
 
 .outsideClick {
     height: 100vh;
+    height: 100%;
     left: 0;
     position: fixed;
     top: 0;
@@ -62,4 +70,7 @@ hr {
     z-index:1;
     position: relative;
     padding: 2%;
+}
+.tabs {
+    position: relative;
 }

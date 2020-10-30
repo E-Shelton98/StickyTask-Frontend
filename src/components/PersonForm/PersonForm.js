@@ -4,7 +4,12 @@ import "./PersonForm.css";
 
 // framer motion function for the person form
 const personFormVariant = {
-  animate: {},
+  transition: {
+    duration: 20.4,
+    type: "spring",
+    ease: "easeIn",
+    stiffness: 120,
+  },
 };
 
 // create framer motion variable for animating the add tasker button
@@ -55,15 +60,18 @@ const PersonForm = (props) => {
 
   return (
     <motion.form
+      className="personForm"
       variants={personFormVariant}
-      animate="animate"
-      transition={{}}
+      initial={{ y: 0 }}
+      animate={{ y: 10 }}
+      transition="transition"
       onSubmit={() => {
         handleSubmit();
       }}
     >
       <input
         type="text"
+        placeholder="Tasker's Name"
         id="person-name"
         name="name"
         value={formData.name}
@@ -76,7 +84,7 @@ const PersonForm = (props) => {
         whileTap="whileTap"
         id="personButton"
         type="submit"
-        value="Add Tasker!"
+        value="Add Tasker"
       />
     </motion.form>
   );

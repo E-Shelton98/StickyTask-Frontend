@@ -7,15 +7,19 @@ import DisplayPeople from "../DisplayPeople/DisplayPeople";
 
 // framer motion function for the sticky form
 const stickyFormVariant = {
-  animate: {},
+  transition: {
+    duration: 20.4,
+    type: "spring",
+    ease: "easeIn",
+    stiffness: 120,
+  },
 };
 
 // create framer motion variable for animating the create button
 const createButtonVariant = {
   whileHover: {
     scale: 1.1,
-    textShadow: "0px 0px 8px rgb(255,255,255)",
-    boxShadow: "0px 0px 8px rgb(255,255,255)",
+
     transition: {
       yoyo: Infinity,
       duration: 0.4,
@@ -44,12 +48,11 @@ const StickyForm = (props) => {
       onSubmit={() => {
         handleSubmit();
       }}
+      className="stickyForm"
       variants={stickyFormVariant}
-      animate="animate"
-      transition={{
-        duration: 0.4,
-        ease: `easeOut`,
-      }}
+      initial={{ y: 0 }}
+      animate={{ y: 10 }}
+      transition="transition"
     >
       <input
         type="text"
@@ -59,7 +62,6 @@ const StickyForm = (props) => {
         value={formData.task}
         onChange={handleChange}
       />
-      <br />
 
       <input
         type="text"
@@ -69,7 +71,6 @@ const StickyForm = (props) => {
         value={formData.completeBy}
         onChange={handleChange}
       />
-      <br />
 
       <input
         type="text"
@@ -79,7 +80,6 @@ const StickyForm = (props) => {
         value={formData.workSpace}
         onChange={handleChange}
       />
-      <br />
 
       <input
         type="text"
@@ -89,22 +89,21 @@ const StickyForm = (props) => {
         value={formData.description}
         onChange={handleChange}
       />
-      <br />
+
       <DisplayPeople
         url={props.url}
         setFormData={setFormData}
         formData={formData}
       />
-      <br />
+
       <motion.input
         id="createButton"
         type="submit"
-        value={props.label}
+        value="Add Sticky"
         variants={createButtonVariant}
         whileHover="whileHover"
         whileTap="whileTap"
       />
-      {/* <input type="submit" value={props.label} /> */}
     </motion.form>
   );
 };
