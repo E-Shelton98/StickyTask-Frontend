@@ -329,8 +329,8 @@ const Whiteboard = (props) => {
 							id='delete-all'
 							onClick={props.deleteAllStickies}></i>
 					</div>
-
-					<Route
+					
+            <Route
 						exact
 						path='/'
 						render={(rp) => (
@@ -348,6 +348,7 @@ const Whiteboard = (props) => {
 			</div>
 		</div>
 	);
+
 };
 
 export default Whiteboard;
