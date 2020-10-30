@@ -308,7 +308,7 @@ const Whiteboard = (props) => {
       </div>
       <div className="desktop-view">
         <h2>To-Do</h2>
-        <Route
+        {<Route
           exact
           path="/"
           render={(rp) => (
@@ -317,10 +317,11 @@ const Whiteboard = (props) => {
               stickies={stickiesToDo}
               setDone={setDone}
               deleteSticky={deleteSticky}
-              selectSticky={selectSticky}
+			  selectSticky={selectSticky}
+			  people={people}
             />
           )}
-        />
+        />}
         <div className="done-stickies-dt">
           <div className="done-top-row">
              <h2>Done</h2>
