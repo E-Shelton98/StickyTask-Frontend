@@ -27,19 +27,22 @@
 }
 
 .sean-blurb {
+  color: #fffdd0;
   font-size: 25px;
   padding: 15px;
   border-bottom-style: groove;
 }
 
 .erik-blurb {
-  font-size: 15px;
+  color: #fffdd0;
+  font-size: 25px;
   padding: 15px;
   border-bottom-style: groove;
 }
 
 .frieda-blurb {
-  font-size: 15px;
+  color: #fffdd0;
+  font-size: 25px;
   padding: 15px;
   border-bottom-style: groove;
 }
