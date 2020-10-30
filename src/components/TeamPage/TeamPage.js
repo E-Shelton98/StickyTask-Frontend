@@ -7,7 +7,11 @@ import "./TeamPage.css";
 const TeamPage = (props) => {
   return (
     <div className="team-page">
-      <h2 className="meet-the-team">Let Us Reintroduce Ourselves</h2>
+      <h2 className="meet-the-team">
+        Let <motion.span whileHover={{ color: "#FFFDD0" }}>Us</motion.span>{" "}
+        <motion.span whileHover={{ color: "#1400ab" }}>Reintroduce</motion.span>{" "}
+        Ourselves
+      </h2>
       <h3>Sean</h3>
       <motion.img
         whileHover={{ scale: 1.4 }}

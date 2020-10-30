@@ -11,11 +11,13 @@
 .erik-image {
   height: 200px;
   width: 200px;
+  border-style: solid;
 }
 
 .frieda-image {
   height: 200px;
   width: 200px;
+  border-style: solid;
 }
 
 .meet-the-team {
